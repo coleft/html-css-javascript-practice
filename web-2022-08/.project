@@ -3,6 +3,7 @@
 	<name>web-2022-08</name>
 	<comment></comment>
 	<projects>
+		<project>everyday_coding</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
