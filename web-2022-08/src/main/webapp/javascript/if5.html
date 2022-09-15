@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>사은품 증정</title>
+	</head>
+	<body>
+		<div>
+			구입 금액에 따른 사은품이 아래와 같이 지금되도록 프로그램 하시오.
+			<ul>
+				<li>만원 이상 : 비누</li>
+				<li>십만원 이상 : 화장지</li>
+				<li>오십만원 이상 : 어린이 자전거</li>
+				<li>백만원 이상 : 성인 자전거</li>
+			</ul>		
+		</div>
+		<span>구입금액</span>
+		<input type = 'text' id = 'amt' value = '900000'/>		
+		<br/>
+		<span>사은품</span>
+		<output id = 'gift'></output>
+		<br/>
+		<br/>
+		<input type = 'button' value = '누르면 사은품' id = 'btn'/>						
+		<script>
+			let amt = document.querySelector('#amt');
+			let gift = document.querySelector('#gift');
+			let btn = document.querySelector('#btn');				
+			btn.onclick = function(){	
+				let a = parseInt(amt.value);
+				let result
+				//amt.value
+				if(a>=1000000){
+					result = '성인 자전거 당첨!';
+				}else if(a>=500000){
+					result = '어린이 자전거 당첨!';
+				}else if(a>=100000){
+					result = '화장지 당첨!';
+				}else if(a>=10000){
+					result = '비누 당첨!';
+				}else {
+					result = '제품을 더 구매하세요.';
+				}		
+				gift.innerHTML = result;
+			}		
+		</script>
+	</body>
+</html>

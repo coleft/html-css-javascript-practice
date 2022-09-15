@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>if3.html</title>
+</head>
+<body>
+	<p>
+		지역, 성별을 input 태그로 입력받아 서울여자라면 "참"을
+		아니면 "거짓"을 console창에 출력하시오.
+	</p>
+	
+	<span>지역</span>
+	<input type = 'text' value = '부산' id = 'zone' />
+	<br/>
+	<span>성별</span>
+	<input type = 'text' value = '남자' id = 'gender'/>
+	<br/>
+	<span>결과</span>
+	<output id = 'print'></output>
+	<br/>
+	
+	<input type = 'button' value = '확인' id = 'btn'/>
+	
+	<script>
+	let z = document.querySelector('#zone');
+	let g = document.querySelector('#gender');
+	let btn = document.querySelector('#btn');
+	let print = document.querySelector('#print');
+	
+	btn.onclick = function() {
+		console.log('버튼이 클릭되었습니다.');
+		console.log('사는지역:', z.value);
+		console.log('성별:', g.value);
+		
+		if((z.value == '서울') && (g.value == '여자')) {
+			console.log('참');
+			print.innerHTML = '참';
+		}else{
+			console.log('거짓');
+			print.innerHTML = '거짓';
+		}
+	}
+	
+	</script>
+</body>
+</html>

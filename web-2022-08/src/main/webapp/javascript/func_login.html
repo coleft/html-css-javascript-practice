@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<h2>LOGIN</h2>
+		<form name = 'frm_login'>
+			<span>아이디</span>
+			<input type='text' name = 'id' value = 'a001'/><br/>
+			<span>암★호</span>
+			<input type='password' name = 'pwd'/><br/>
+			<input type = 'button' value = 'LOGIN' onclick = 'chk()'/>
+			<output name = 'output'></output>
+		</form>
+		<script>
+			//늘 io 즉 input output을 먼저 생각해라
+			//css는 _ 언더바 많이 쓰고 나머지는 카멜 형으로 UpperCase많이 활용함
+			//이벤트가 로그인 버튼 부터 시작되네~~~
+			function Login(x, y){
+				let r = "FAIL";
+				if(x=='a001' && y =='1111'){
+					r = 'PASS';
+				}
+				return r;
+			}
+			
+			function chk(){
+				let frm = document.frm_login;
+				let id = frm.id.value;
+				let pwd = frm.pwd.value;
+				
+				let a = Login(id, pwd);
+				frm.output.innerHTML = a;
+			}
+			
+		</script>		
+	</body>
+</html>

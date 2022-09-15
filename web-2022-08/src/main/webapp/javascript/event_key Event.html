@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>event_key Event</title>
+		<style>
+			form{				
+				margin:50px auto;
+			}
+			form>span{
+				display:inline-block;
+			}
+			form>input{
+				display:inline-block;
+			}
+			.span{
+				width:70px;
+			}
+		</style>
+	</head>
+	<body>
+		<form name='frm'>
+			<span class='span'>주민번호</span>
+			<input type='text' name='ju1' onKeyDown="chk(this.form, 'ju1')" /> -						
+			<input type='text' name='ju2' onKeyDown="chk(this.form, 'ju2')" /><br/>
+			<span class='span'>성명</span>
+			<input type='text' name='irum' onKeyDown="func()"/>
+		</form>
+	</body>
+	<script>
+		/* 
+		*  1. 매개변수가 ff, str인 함수 chk 정의 
+		*  		1) 만약 ff.ju1.value 문자열 길이가 6이상이고 str의 값이 'ju1'이라면 포인터를 ju2로 이동시킨다.	
+		* 		2) 만약 ff.ju2.value 문자열 길이가 7이상이고 str의 값이 'ju2'라면 포인터를 irum으로 이동시킨다.
+		*  2. 매개변수를 event로 하고 함수명을 func로 지정하시오.
+		*		1) window.event와 매개변수 event를 논리합 연산하여 그 결과를 지역 변수 ev에 대임.
+		*		2) 지역변수 k에 ev.key와 ev.keyCode를 논리합 연산하여 대입.
+		*		3) 만약 k가  'Enter'이거나 k가 13이라면 alert()창 띄우기.
+		*/
+	
+		function chk(ff, str){
+			if(ff.ju1.value.length>=6&&str=="ju1")ff.ju2.focus();
+			if(ff.ju2.value.length>=7&&str=="ju2")ff.irum.focus();
+		}
+		
+		function func(){
+			var ev = window.event;
+			var k = ev.key || ev.keyCode;
+			if(k=='Enter'||k==13){
+				alert('전송합니다.')
+			}
+		}
+	</script>
+</html>

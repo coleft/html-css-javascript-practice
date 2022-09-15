@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+		.space1{
+			border : 1px solid red;
+			display : inline-block;
+			margin : 30px;
+			padding : 20px;
+			width : 100px;
+			
+		}
+		</style>
+	</head>
+	<body>	
+		<h1>x~y까지 구구단 출력</h1>
+		<span>x단</span>
+		<input type = 'text' id = 'xdan' value = '2'/>
+		<br/>
+		<span>y단</span>
+		<input type = 'text' id = 'ydan' value = '7'/>
+		<input type = 'button' value = '실행' id = 'btn'/>
+		<!-- <input type = 'button' value = '지우개' onclick = 'history.go(0);'/> -->
+		<br/>
+		<output id = 'output'></output>
+		
+		<script>
+		//구구단 x단부터 y단까지
+		let xdan = document.querySelector('#xdan');
+		let ydan = document.querySelector('#ydan');
+		let btn = document.querySelector('#btn');
+		
+			
+		btn.onclick = function(){
+			let gugudan = "";
+			let x = Number(xdan.value);
+			let y = Number(ydan.value);
+			for(let i = x; i <= y; i++){
+				gugudan += "<span class = 'space1'>" + i + "단" + "<br/>";
+				
+				for (let j = 1; j<10; j++){
+					gugudan += "<span class = 'space2'>"+i+" * "+j+" = "+(i*j)+"<br/>"+"</span>";
+				}
+				gugudan += "</span>";
+				//output.innerHTML = gugudan; 바깥에 있는게 낫다.
+			}	
+			output.innerHTML = gugudan;
+		}		
+		</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>temp2</title>
+</head>
+<body>
+	<script>
+		let km;
+		var price;
+		var amt;
+		
+		zone = prompt("시내? 시외?", "시외");
+		km = prompt("주행 거리는 ?", 20);
+		price = prompt("기본단가 ?", 2000);
+		amt = km*price;
+		
+		if(zone == "시외"){
+			amt = 1.1*amt;
+		}
+		
+		document.write("<ul>");
+		document.write("<li>zone : " + zone);
+		document.write("<li>Km : " + km);
+		document.write("<li>Price : " + price);
+		document.write("<li>Amt : " + amt);
+		document.write("<ul>");
+	</script>
+</body>
+</html>

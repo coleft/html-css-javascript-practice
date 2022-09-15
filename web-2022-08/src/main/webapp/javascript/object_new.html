@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>object_new.html</title>
+	</head>
+	<body>
+		<script>
+			//Object를 사용한 객체선언 => 정보를 따로 저장할 수 없다는 치명적 단점 있다.
+			//리터럴이랑 같음.
+			let obj1 = new Object();
+			obj1.x=100;
+			obj1.y=200;
+			obj1.sum=function(){
+				this.s = this.x + this.y;
+				return this.s;
+			}
+			obj1.avg = function(){
+				this.a = this.s/2;
+				return this.a;
+			}
+			
+			console.log('obj1.sum = ', obj1.sum());
+			console.log('obj1.avg = ', obj1.avg());
+			console.log('obj1.s = ', obj1.s);
+			console.log('obj1.a = ', obj1.a);
+			
+			obj1.x=50;
+			obj1.y=20;
+			
+			console.log('obj1.sum = ', obj1.sum());
+			console.log('obj1.avg = ', obj1.avg());
+			console.log('obj1.s = ', obj1.s);
+			console.log('obj1.a = ', obj1.a);
+			
+			
+			
+		</script>
+	</body>
+</html>

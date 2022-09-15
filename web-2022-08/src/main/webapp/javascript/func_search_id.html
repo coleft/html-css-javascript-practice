@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>func_search_id</title>
+</head>
+<body>
+	<form name = 'frm'>
+		<span>이메일</span>
+		<input type='text' name='email' size='30'/><br/>
+		<span>암호</span>
+		<input type='password' name='pwd'/><br/>
+		<input type='button' value='아이디확인' name='btn'/>
+	</form>
+	<script>
+		let frm = document.frm;
+		frm.btn.onclick = function chk(){		//익명함수 구조이다. Chk는 디버깅할때나 씀. 호출은 onclick
+			let email = frm.email.value;
+			let pwd = frm.pwd.value;
+			let id = CheckId(email, pwd);
+			alert('조회하신 아이디는' + id + '입니다.');
+		}
+		
+		function CheckId(em, pw){
+			let id = '넌 누구???';
+			if(em == 'a001@korea.com' && pw =='1234'){
+				id = 'kkk';
+			}		
+			return id;
+		}
+	</script>
+</body>
+</html>

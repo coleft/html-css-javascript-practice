@@ -1,0 +1,33 @@
+@charset "UTF-8";
+main{
+	border:3px solid #aaa;
+	width:500px;
+	margin:30px auto;
+	min-height:300px;
+}
+main>h1{
+	text-align:center;
+}
+form{	
+	text-align:center;
+	margin-top:35px;
+}
+form>span{
+	display:inline-block;
+	width:100px;
+}
+form>input{
+	display:inline-block;
+	width:180px;
+}
+#login{width:80px;}
+main>div{		
+	width:140px;	
+	margin:30px auto;
+}
+#status{
+	float:left;
+}
+#result{
+	float:right;
+}

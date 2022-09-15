@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>score_crud.html</title>
+		<link rel='stylesheet' href='../css/score_crud.css'>
+		<script defer src='../js/score_crud.js'></script>
+	</head>
+	<body>
+		<main>
+			<h1>성적관리 CRUD (II)</h1>
+			<div id = 'left'>
+				<form name='frm'>
+					<div id = 'caution'>* Serial 클릭시 숫자 자동 생성 *</div><br/>
+					<span>Serial</span>
+					<input type = 'text' name = 'serial'/>
+					<input type = 'button' value = '검색' id='search' name = 'findSerial'/>
+					<br/>
+					<span>학번</span>
+					<input type = 'text' name = 'id'/>
+					<br/>
+					<span>과목</span>
+					<input type = 'text' name = 'subject'/>
+					<br/>
+					<span>성적</span>
+					<input type = 'text' name = 'score'/>
+					<hr/>
+					<div id='buttons'>
+						<input type = 'button' value='저장' class='btn' name='btnSave'/>
+						<input type = 'button' value='출력' class='btn' name='btnOutput'/>
+						<input type = 'button' value='수정' class='btn' name='btnUpdate'/>
+						<input type = 'button' value='삭제' class='btn' name='btnDelete'/>	
+					</div>				
+				</form>
+			</div>
+			<div id = 'right'>				
+				<h2>[ 성적현황 LIST ]</h2>
+				<div class = 'title'>
+					<span class='serial'>SERIAL</span>
+					<span class='id'>학번</span>
+					<span class='subject'>과목</span>
+					<span class ='score'>성적</span>
+				</div>				
+				<div class='items'>					
+				</div>
+			</div>
+		</main>
+	</body>
+</html>

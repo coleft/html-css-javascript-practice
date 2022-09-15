@@ -1,0 +1,19 @@
+@charset "UTF-8";
+body{
+	width:450px;
+}
+
+div>span{
+	display:inline-block;
+	width:100px;
+	text-align:center;
+}
+
+#category{
+	border-top:3px solid gray;
+	border-bottom:3px solid gray;
+}
+
+#list{
+	border-bottom:3px solid gray;
+}

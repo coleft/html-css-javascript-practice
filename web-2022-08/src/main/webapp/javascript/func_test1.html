@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<script>
+			//1)매개변수 x, 반환형 y
+			MyName();
+			let m = new MyName(); 
+			// 함수 MyName()이 객체로 생성되어 변수 m에 대입된다.
+			// 이 때 m은 일반변수와 다르게 객체명이라고 한다.
+			main();
+			function MyName(){
+				console.log('강은성');
+			}
+			function sum(a,b) {
+				if (a == null) a=0;
+				if (b == null) b=0;
+				var r = a+b;
+				return r; 	//
+			}
+			function main(){
+				document.write("<li>sum()=" + sum());
+				document.write("<li>sum(30,40,50) =" + sum(30,40,50));
+			}
+			
+			//매개변수 x, 반환값 o
+			function MyAddress(){
+				return "대한민국";
+			}
+			let address = MyAddress();
+			console.log(address);
+			
+			//매개변수 o, 반환값 x
+			function sum(x,y){
+				let s = x + y;
+				console.log('s=', s);
+			}
+			sum(10,20);
+			sum(20, 100);
+			let x = 100;
+			let y = 200;
+			sum(x,y);
+			
+			//4)매개변수 o , 반환값 o 인 경우
+			function avg(x,y){
+				let s = x+y;
+				let a = s/2;
+				return a;
+			}
+			console.log(avg(10,20));
+			console.log(avg(100,50));
+			
+			// 반환형이 있는 경우와 반환형이 없는 경우를 잘 살펴보아라
+			// 1) 반환형이 없는 건 console이라는 문장을 function 안에 썼다.
+			//    그 자체로 보고서를 처리합니다.
+			//
+			// 2) 반환형이 있는 경우
+			//    너 주소가 뭐니?라 할 떄 대한민국이라는 보고서를 받아서
+			// 	  함수 이외의 장소에서 처리하는 것이다.
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>		
+	</body>
+</html>

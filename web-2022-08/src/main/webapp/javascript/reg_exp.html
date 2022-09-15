@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>reg_exp</title>
+	</head>
+	<body>
+		<script>
+			function msg(reg,str){
+				var b = reg.test(str);
+				var temp = `<li><b>${reg}</b> : ${str} <font color='red'>${b}</font>`;
+				document.write(temp);				
+			}
+			try{
+				var str1 = '123';
+				var str2 = '123abc123';
+				var str3 = 'abc';
+				var str4 = '!@#a';
+				var str5 = '가나다a';
+				var str6 = 'abc123가나다';
+				var str7 = 'Aasdfasfd';
+				var str8 = 'asdfaAasfa';
+				
+				var reg;
+				
+				// 1 숫자가 포함되어 있는가
+				reg = /[0-9]/;
+				msg(reg, str1);
+				msg(reg, str2);
+				msg(reg, str3);
+				msg(reg, str4);
+				msg(reg, str5);
+				msg(reg, str6);
+				msg(reg, str7);
+				msg(reg, str8);
+				
+				document.write('<hr/>');
+				
+				// 2 숫자만 입력되어 있는가
+				reg = /^[0-9]+$/; //[0-9]는 /\d/와 같다.
+				msg(reg, str1);
+				msg(reg, str2);
+				msg(reg, str3);
+				msg(reg, str4);
+				msg(reg, str5);
+				msg(reg, str6);
+				msg(reg, str7);
+				msg(reg, str8);
+				
+				document.write('<hr/>');
+				
+				//[미션] str1~str8 값을 배열 유형으로 바꾸고, 테스트를 반복문을 사용하여 테스트 하시오.
+				let list = [];
+				
+				list.push(str1);
+				list.push(str2);
+				list.push(str3);
+				list.push(str4);
+				list.push(str5);
+				list.push(str6);
+				list.push(str7);
+				list.push(str8);				
+				
+				for(s of list){
+					msg(reg, s);
+				}
+				document.write('<hr/>');
+				
+				// 3 영문자만
+				reg = /^[a-zA-Z]+$/;
+				for(s of list){
+					msg(reg, s);
+				}
+				document.write('<hr/>');
+				
+				// 4 영숫자만
+				reg = /^[a-zA-Z0-9]+$/;
+				for(s of list){
+					msg(reg, s);
+				}
+				document.write('<hr/>');
+				
+				// 5 첫글자 대문자
+				reg = /^[A-Z]/;
+					for(s of list){
+						msg(reg, s);
+					}
+					document.write('<hr/>');
+					
+				// 6 한글만
+				reg = /^[ㄱ-휗]+$/;
+				for(s of list){
+					msg(reg, s);
+				}
+				document.write('<hr/>');
+			
+				// 7 전화번호
+				array=['02-12-1234', '01-123-1234', '011-12-1234', '011-123-1234' ];
+				
+				reg = /^\d{2,3}-\d{3,4}-\d{4}$/;
+				for(s of array){
+					msg(reg, s);
+				}
+				document.write('<hr/>');
+				
+				// 8 이메일
+				array=['123','a123','a123@a.a','1as@naver.com','cent@naver.co.m','133@daum.net'];
+				reg = /^[a-zA-z]+\w+@[a-zA-z]+(\.\w+){1,2}$/;
+				for(s of array){
+					msg(reg, s);
+				}
+				document.write('<hr/>');
+			
+			}catch(error){
+				alert(error);
+			}
+			
+		</script>
+	</body>
+</html>

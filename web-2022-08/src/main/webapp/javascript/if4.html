@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>if4.html</title>
+</head>
+<body>
+
+
+	<span>이름</span>
+	<input type = 'text' id = 'name' value = '이름을 입력하시오.'>
+	<br/>
+	<span>국어</span>
+	<input type = 'text' id = 'kor' value = '점수를 입력하시오.'>
+	<br/>
+	<span>영어</span>
+	<input type = 'text' id = 'eng' value = '점수를 입력하시오.'>
+	<br/>
+	<span>수학</span>
+	<input type = 'text' id = 'math' value = '점수를 입력하시오.'>
+	<br/>
+	<input type = 'button' value = '결과' id = 'btn'/>
+	<br/>
+	<span>총점</span>
+	<output id = 'total'></output>
+	<br/>
+	<span>평균</span>
+	<output id = 'avg'></output>
+	<br/>
+	<span>학점</span>
+	<output id = 'grade'></output>
+	<script>
+	
+	/*
+	function eraseText() {
+	    document.getElementById("output").value = "";
+	}
+	*/	
+		
+		// 출처: https://hohoya33.tistory.com/62 [개발 메모장:티스토리]
+	
+		let btn = document.querySelector('#btn');
+		
+		let name = document.querySelector('#name');
+		let kor = document.querySelector('#kor');
+		let eng = document.querySelector('#eng');
+		let math = document.querySelector('#math');
+		let total = document.querySelector('#total');
+		let avg = document.querySelector('#avg');
+		let grade = document.querySelector('#grade');			
+		
+		btn.onclick = function(){		
+			
+			a = parseInt(kor.value);
+			b = parseInt(eng.value);
+			c = parseInt(math.value);
+			
+			let total_score = a+b+c;
+			let avg_score = total_score/3.0;
+			
+			total.innerHTML = total_score;
+			avg.innerHTML = avg_score;
+			
+			if(avg_score>=90){
+				grade.innerHTML = 'A';
+			}else if (avg_score>=80){
+				grade.innerHTML = 'B';
+			}else if (avg_score >=70){
+				grade.innerHTML = 'C';
+			}else if (avg_score >=60){
+				grade.innerHTML = 'D';
+			}else{
+				grade.innerHTML = 'F';
+			}
+			
+			console.log('님 총첨은 ' + total_score + '입니다.');
+			console.log('님 평균은 ' + avg_score + '입니다.');
+			
+			if(avg_score>=90){
+				console.log(name.value + '님 성적은 A입니다.');
+			}else if (avg_score>=80){
+				console.log(name.value + '님 성적은 B입니다.');
+			}else if (avg_score >=70){
+				console.log(name.value + '님 성적은 C입니다.');
+			}else if (avg_score >=60){
+				console.log(name.value + '님 성적은 D입니다.');
+			}else{
+				console.log(name.value + '님 성적은 F입니다.');
+			}
+			
+			
+			
+		}
+		
+	
+		 //3개의 성적을 임의의 변수에 대입한 후 총점, 평균을 구하고
+		 //평균에 따라 학점을 구하여 console에 출력하시오.
+		 
+		 
+		 
+	</script>
+</body>
+</html>

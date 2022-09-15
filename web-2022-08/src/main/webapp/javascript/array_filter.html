@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>array_filter.html</title>
+</head>
+<body>
+	<script>
+	// 기본적으로 JSON의 값은 문자형이기 때문에 숫자를 제외한 모든 데에 ''를 써라
+	let scores=[
+		{'name':'hong', 'score':90,'phone':'010'},
+		{'name':'kim', 'score':70,'phone':'010'},
+		{'name':'lee', 'score':50,'phone':'017'},
+		{'name':'park', 'score':40,'phone':'018'},
+		{'name':'choi', 'score':10,'phone':'019'}
+	];
+	
+	//for of
+	for(v of scores){
+		console.log(v.name, v.score, v.phone);
+	}
+	
+	//forEach
+	scores.forEach(function(v,index){
+		console.log(index, v.name, v.score, v.phone);
+	})
+	
+	//filter를 사용하여 조건에 맞는 자료를 모아 새로운 배열 생성
+	let passArray = scores.filter(function(v){
+		if(v.score>=60) return true;
+		else return false;
+	})
+	console.log(passArray);
+	
+	//filter를 사용하여 불합격자 명단을 모아 새로운 배열을 만들고 출력
+	let failArray = scores.filter(function(x){
+		let flag = false;
+		if(x.score<60) flag = true;
+		return flag;
+	})
+	console.log(failArray);
+	
+	//filter를 사용하여 연락처가 010인 배열을 모아 새로운 배열을 만들어 출력
+	let ooneoArray = scores.filter(function(w){
+		if(w.phone=='010') return true;
+		else return false;		
+	})
+	console.log(ooneoArray);
+	
+	</script>
+</body>
+</html>

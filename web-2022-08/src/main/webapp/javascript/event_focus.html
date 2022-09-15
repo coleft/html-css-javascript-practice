@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>event_focus</title>
+		<script>
+			function onf(f){
+				f.b.value = "focus";
+			}
+			function onb(f){
+				f.b.value ="blur";
+			}
+			function onc(f){
+				f.b.value = "change";
+			}
+			function clk(f){
+				f.b.value = "click";
+			}
+		</script>
+	</head>
+	<body>
+		<form name="ff">
+			<input type='text' name='a' onfocus='onf(this.form)'
+										onblur='onb(this.form)'/><br/>			
+			<input type='text' name='c' onchange='onc(this.form)'
+										onclick ='clk(this.form)'/><br/>			
+			<input type='text' name='b'/>
+		</form>
+	</body>
+</html>

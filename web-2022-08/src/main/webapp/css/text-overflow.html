@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>text-overflow.html</title>
+		<style>
+			div{
+				width:300px;
+				height: 24px;
+				border: 1px solid #aaa;
+				/* 아래 세 개는 한 쌍이다. */
+				overflow: hidden; /*자동으로 줄바뀌는 것=>워드랩 이걸 없애야해*/
+				white-space: nowrap;/*줄 바뀌는거 없애는 작업이다.*/
+				text-overflow: ellipsis;/*제목 등 블락을 넘아갈 때*/				
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+		까닭이요, 애기 노루, 밤을 너무나 까닭입니다. 어머님, 딴은 시인의 밤이 까닭입니다.		
+		봄이 아름다운 오는 거외다. 무성할 옥 계절이 별 하나에 어머니 이름자 너무나 계십니다.		
+		이름자 소녀들의 자랑처럼 별 내일 까닭이요, 무성할 버리었습니다.		
+		남은 그리고 멀리 밤이 아무 속의 나는 거외다.		
+		풀이 사랑과 나는 별을 까닭입니다. 차 덮어 이름자 거외다.
+		</div>
+	</body>
+</html>

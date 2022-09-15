@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Num_mission_99</title>
+	</head>
+	<body>
+		<p>
+			수량, 단가를 입력받아 금액, 부가세10%를 계산하여 합계를 출력하시오.
+			단, 소수점 이하는 절삭처리.			
+		</p>
+		<form name = 'frm'>
+			<span>수량</span>
+			<input type = 'text' name = 'ea' value = '1000'/><br/>
+			<span>단가</span>
+			<input type = 'text' name = 'price' value = '10'/>
+			<input type = 'button' value = '계산' name = 'btn'/><br/>
+			<span>금액</span>
+			<output name = 'amt'></output><br/>
+			<span>부가세</span>
+			<output name = 'tax'></output><br/>
+			<span>총액</span>
+			<output name = 'total'></output><br/>
+			
+		</form>
+		<script>
+			function test(){
+				let amt = 12345.6789;
+				console.log( parseInt(amt) );
+				console.log( parseInt(amt+0.5));
+				console.log( parseInt((amt/10+0.5))*10 );
+				
+				console.log('--------------');
+				console.log(amt.toFixed(0));
+				console.log(amt.toFixed(1));
+			}
+			test(); //함수호출
+			
+			let frm = document.frm;
+			frm.btn.onclick = function(){
+				let ea = Number(frm.ea.value);
+				let price = Number(frm.price.value);
+				let amt = frm.amt;
+				let tax = frm.tax;
+				let total = frm.total;
+				
+				let v = Number((ea*price*10/11).toFixed());
+				let t = parseInt((v/10).toFixed(2)) //toFixed는 문자열이 됨....
+				
+				amt.value = v.toLocaleString();
+				tax.value = t.toLocaleString();
+				total.value = (v+t).toLocaleString();
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>func_search_pwd</title>		
+	</head>
+	<body>
+		<form name = 'frm'>
+			<span>아이디</span>
+			<input type = 'text' name = 'id' value = 'kkkk'/>
+			<input type = 'button' value = '암호찾기' onclick = 'find()'/>	
+					
+		</form>
+		<script>
+			function find(){
+				id = document.frm.id.value;
+				let pw = '저리가쇼~~'
+				if(id== 'kkkk'){
+					pw = SearchPwd(id);
+				};
+				alert(pw);
+			}
+			function SearchPwd(id){				
+				if(id == 'kkkk'){
+					pw = '1111';					
+				}				
+				return pw;
+			}
+		</script>
+	</body>
+</html>

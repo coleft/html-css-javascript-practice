@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>box-model.html</title>
+		<style>
+			*{
+				box-sizing:border-box;
+				/*패드에도 불구하고...*/
+			}
+			#parent{
+				background-color:#ddd;
+				width:600px;
+				height:400px;
+				position:absolute;
+			}
+			#first{
+				width:200px;
+				height:100px;
+				background-color:#f99;
+				margin-top:100px;
+				border: 10px dotted #f00;
+			}
+			#second{
+				width:200px;
+				height:100px;
+				background-color:#99f;
+				padding:30px 60px;
+				/*상하:30px, 좌우:60px*/	
+			}
+		</style>
+	</head>
+	<body>
+		<div id = 'parent'>
+			<div id = 'first'>FIRST</div>
+			<div id = 'second'>SECOND</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>str_function2</title>
+	</head>
+	<body>
+		<input type = 'text' size = '50' id = 'source' value = '개새끼'/><br/>
+		<input type = 'text' size = '50' id = 'target' value = ''/><br/>
+		<input type = 'text' size = '10' id = 'word' value = ''/>
+		<input type = 'button' value = '변환' id = 'btn'/>
+		
+		<script>
+			//프로그램 만들 땐 입출력에 대한 고민을 먼저해라.
+			//다음으로 이벤트가 어디에서 발생하는가.(시작)
+			//위 두 가지만 잘 해내면 시작은 문제 없어. 
+		let btn = document.querySelector("#btn");
+		
+		btn.onclick = function(){
+			let source = document.querySelector("#source");	
+			let target = document.querySelector("#target");
+			let word = document.querySelector("#word").value;
+			let temp = source.value.replace(word, '[욕하지 마세요.]');
+			
+			target.value = temp;			
+		}
+		</script>
+	</body>
+</html>

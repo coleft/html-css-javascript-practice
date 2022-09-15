@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<script>
+         let week=['일','월','화','수','목','금','토'];
+         let nal = document.querySelector('#nal');
+         let time = document. querySelector('#time');
+
+         setInterval(createDate, 1000);
+         
+         function createDate(){
+            let now = new Date();
+            let nalstr = now.toISOString().substr(0,10);
+            nalstr += "(" + week[now.getDay()] + ")";
+            nal.innerHTML = nalstr;
+            
+            let timestr = String(now.getHours()).padStart(2, "0") + ':'
+                       + String(now.getMinutes()).padStart(2, "0") + ':'
+                       + String(now.getSeconds()).padStart(2, "0");
+            time.innerHTML = timestr;
+                       
+         }
+         
+         
+      </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+@charset "UTF-8";
+/* 바탕색을 노란색 */
+
+div#abc{
+	border : 3px solid #ff0000;
+	padding : 20px;
+	width : 300px;
+	height : 200px;
+	margin : 20px auto;
+	/* box-sizing : border-box; */
+}
+.font{
+	font-size: 50px;
+	font-family: Arial, Times, sns-sefir;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.background{
+	width: 500px;
+	height: 500px;
+	background-color: yello;
+	background-position: left;
+}

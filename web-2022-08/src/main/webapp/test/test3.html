@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>test3</title>
+		<link rel='stylesheet' href='test3.css'>
+		<script defer src='test3.js'></script>
+	</head>
+	<body>
+		<main>
+			<h1>아이디와 암호</h1>
+			<form>				
+				<span>아이디</span>
+				<input type='text' id='id' value='kim'/><br/>
+				<span>비밀번호</span>
+				<input type='password' id='pw' value='1111'/><br/><br/>
+				<input type='button' id = 'login' value='로그인' onclick='check()'>							
+			</form>			
+			<div id='output'>
+				<span id='status'>상태메세지</span>
+				<output id='result'></output>
+			</div>
+		</main>
+	</body>
+</html>

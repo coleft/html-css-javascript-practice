@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>forin.html</title>
+	</head>
+	<body>
+		<input type = 'button' value = 'VIEW' onclick='abc()'/> <!-- function a b c 를 부르는 것이다. -->
+		<input type = 'button' value = 'exam' onclick='exam()'>
+		
+		<div id = 'result'></div>
+		<script>
+			function abc(){
+				let obj = ['강아지', '망아지', '송아지', '고양이'];				
+				let str = '';
+				for(var x in obj){
+					
+				}alert(obj[1]);	
+			}
+			
+			function exam(){
+				let obj = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+				//배열 obg 중 짝수만 result 출력하기>
+				let str = '';
+				for (x in obj) {
+					if(obj[x]%2==0){
+					console.log(obj[x]);
+					}
+				}
+			}
+			
+		</script>
+	</body>
+</html>

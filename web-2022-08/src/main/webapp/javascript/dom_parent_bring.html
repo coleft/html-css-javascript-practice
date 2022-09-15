@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>부모 자식 node 가져오기</title>
+	</head>
+	<body>
+		<div id='부모'>
+			<button type='button' class='previous' value='previous'>왼쪽 형제</button>
+			<button type='button' class='me' value='나야'>나</button>
+			<button type='button' class='next' value='next'>오른쪽 형제</button>
+		</div>
+		<script>
+			let me = document.querySelector(".me");	//기준설정
+			
+			let parent = me.parentElement; //부모속성
+			let leftBtn = me.previousElementSibling;	//다른자식
+			let rightBtn = me.nextElementSibling;	//또다른자식
+			
+			console.log('parent : ', parent.id);
+			console.log('me : ', me.value);
+			console.log('prev : ', leftBtn.value);
+			console.log('next : ', rightBtn.value);
+			
+			console.log('-------------------------');
+			
+			let childs = parent.children;	//부모기준에서 자식새끼들
+			console.log('child cnt : ', childs.length);
+			console.log(childs[0].value);
+			console.log(childs[1].value);
+			console.log(childs[2].value);
+		</script>
+	</body>
+</html>

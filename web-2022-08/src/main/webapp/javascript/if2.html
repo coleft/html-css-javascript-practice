@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>if2.html</title>
+</head>
+<body>
+	<p>
+	몸무게가 150이하이고 키가 200이하이면 "탑승가능"
+	아니면 "탑승불가"를 출력
+	</p>
+
+	<span>몸무게</span>
+	<input type = 'text' id = 'weight' value = '50'/>
+	<br/>
+	<span>키</span>
+	<input type='text' id = 'height' value = '180'/>
+	<br/>
+	<input type = 'button' value = '결과' id = 'btn'/>
+	
+	<script>
+		let w = document.querySelector('#weight');
+		let h = document.querySelector('#height');
+		let btn = document.querySelector('#btn');
+		btn.onclick = function(){
+			console.log('버튼이 클릭되었습니다.');
+			console.log('몸무게:', w.value);
+			console.log('키:', h.value);
+			if((w.value<=150) && (h.value<=200)) {
+				console.log('탑승가능');
+			}else{
+				console.log('탑승불가');
+			}
+		}//콜백 형태의 함수 콜백 함수 => 정의해놓고 나중에 실행됐을 때 작동한다.
+		
+		//btn.onclick은 btn이 클릭이 됐을 때!
+	</script>	
+</body>
+</html>

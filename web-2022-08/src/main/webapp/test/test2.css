@@ -1,0 +1,14 @@
+@charset "UTF-8";
+main{
+	border:3px solid #aaa;
+	width:500px;
+	margin:30px auto;
+	min-height:230px;
+}
+main>h1{
+	text-align:center;
+}
+form{	
+	text-align:center;
+	margin-top:35px;
+}

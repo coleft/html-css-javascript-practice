@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>if6.html</title>
+	</head>
+	<body>
+		<div class = 'info'>
+			입사년도와 급여를 input태그를 사용하여 입력받고,
+			<ul>
+				<li>1년차 : 100%</li>
+				<li>3년차 : 150%</li>
+				<li>5년차 : 200%</li>
+				<li>10년차 이상은 : 300%</li>				
+			</ul>
+			보너스를 지급하도록 프로그램하시오.
+			(출력은 입사연도, 급여, 보너스액, 총액을 출력하시오.)
+		</div>
+		<span>입사연도</span>
+		<input type = 'text' id = 'hireDate' value = '2020'/>
+		<br/>		
+		<span>급여</span>
+		<input type = 'text' id = 'pay' value = '10000'/>
+		<br/>
+		<input type = 'button' value = '보너스계산' id = 'btn'/>
+		<br/>
+		<span>보너스액</span><output id = 'bonus'></output>
+		<br/>
+		<span>총액</span><output id = 'total'></output>
+		<script>
+			let G = function(arg){ //arg 매개변수
+				let e = document.querySelector(arg);
+				return e;
+			}
+			let hireDate = G('#hireDate');
+			//let hireDate = document.querySelector('#hireDate');
+			let pay = document.querySelector('#pay');
+			let btn = document.querySelector('#btn');
+			let bonus = document.querySelector('#bonus');
+			let total = document.querySelector('#total');			
+			
+			btn.onclick = function(){
+				
+				let h = 2022-Number(hireDate.value);
+				let p = Number(pay.value);
+				let b = 0; //계산될 보너스
+				
+				switch(true){
+				case h>=10 : b = p*3; break;
+				case h>=5 : b = p*2; break;
+				case h>=3 : b = p; break;
+				default : b = 0; break;
+				}
+				/*
+				if(h>=10){
+					b = p*3;
+					//total.innerHTML = p*4;
+				}else if(h>=5){
+					b = p*2;
+					//total.innerHTML = p*3;
+				}else if(h>=3){
+					b = p*1.5;
+					//total.innerHTML = p*2.5;
+				}else if(h>=1){
+					b = p;
+					//total.innerHTML = p*2;
+				}else{
+					b = '보너스를 받고 싶다면 일을 더 열심히 하세요.';
+					//total.innerHTML = p;
+				}
+				*/
+				bonus.innerHTML = b;
+				total.innerHTML = p+b;
+				
+			}
+		</script>
+	</body>
+</html>

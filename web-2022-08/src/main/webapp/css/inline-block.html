@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>inline-block</title>
+	</head>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+			box-sizing:border-box;
+		}
+		span{
+			width: 500px;
+		}					/* inline 유형의 태그엔 width가 지정되지 않음  */
+		p{
+			width: 100px;
+			background-color:#88f;
+		}
+		div{
+			width:150px;
+			background-color: #f77;
+			display: inline-block;
+			/*float: right;*/
+		}
+	</style>	
+	<body>
+		<h2>inline</h2>
+			<span>성명</span>
+			<span>암호</span>
+			
+		<h2>block</h2>
+			<p>문단1</p>
+			<p>문단2</p>
+		<h2>inline-block</h2>
+			<div>DIV1</div>
+			<div>DIV2</div>
+							
+	</body>
+</html>

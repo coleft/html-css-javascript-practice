@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>func_test3.html</title>
+	</head>
+	<body>
+		<div>
+			몸무게와 키가 각각 w, h에 저장되어 있다. 이를 매개변수로 전달받아
+			몸무게가 150이하이고, 키가 200이하일 때는 "탑승가능", 아니면 "탑승불가"
+			를 리턴받아 document.write로 출력하시오.(함수의 이름은 Func)
+		</div>
+		<script>
+		
+		function Func(w, h){
+			let r = '탑승불가';
+			if(w<=150&&h<=200){
+				r = '탑승가능';
+			}
+			return r;
+		} 		
+			let w = 180;
+			let h = 180;
+			let k = Func(w,h);
+		document.write(k);
+			
+		</script>
+	</body>
+</html>

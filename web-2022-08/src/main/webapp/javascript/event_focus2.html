@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>event_focus2.html</title>
+		<style>	
+			h1{color:coral;}		
+			form{
+				width:400px;
+				height:220px;
+				border: 3px dashed #722;
+				text-align:center;
+				margin: 30px auto;				
+			}
+			.q{margin:10px;}
+			.p{margin:10px;}						
+		</style>
+	</head>
+	<body>
+		<!-- 폼 태그를 사용하여 수량, 단가를 입력 받고, 수량이나 단가가 수정되면
+		즉시 금액을 계산하여 output 태그에 출력하시오. -->
+		
+		<form name='frm'>
+			<h1>금액 계산</h1>
+			<div class = 'q'>
+				<span>수량</span>
+				<input name='q' type='text' onchange="onc(this.form)"/>
+			</div>
+			<div class = 'p'>
+				<span>단가</span>
+				<input name='p' type='text' onchange="onc(this.form)"/><br/>
+			</div>			
+				<span id = 're1'>금액</span>
+				<output id = 're2' name='sales'></output>			
+		</form>
+		<script>
+			let frm = document.frm;	
+			document.frm.sales.value="입력하시오."
+			function onc(aa){
+				let q = frm.q.value;			
+				let p = frm.p.value;
+				let bb = p*q;
+				if(
+					isNaN(parseInt(aa.q.value))||
+					isNaN(parseInt(aa.p.value))		
+				){
+					aa.sales.value="숫자를 입력하시오.";
+				}else{
+					aa.sales.value=bb.toLocaleString('ko-KR');
+				}
+			};
+		</script>		
+	</body>
+</html>
+
+

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>multi_image_preview.html</title>
+		<style>
+			#photos{
+				min-height:120px;
+				border:2px solid #999;
+				padding:10px;
+			}
+			.sub_item{
+				border:1px solid #00f;
+				width:120px;
+				height:150px;
+				border-radius:10px;
+				position:relative;
+				display:inline-block;
+				margin:2px;						
+			}
+			.sub_item>div{
+				position:absolute;
+				width:30px;
+				height:30px;
+				right:3px;
+				bottom:3px;
+				background-color:#aaa8;
+				border-radius:3px;
+			}
+			.sub_item>div:hover{
+				cursor:pointer;
+			}
+			.sub_item>img{
+				width:120px;
+				height:150px;
+				border-radius:10px;
+			}
+			.sub_item>div{		
+				color:#f00;
+				font-size:15pt;
+				text-align:center;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>갤러리에 올릴 사진들을 선택하세요.</h2>	
+		<input type = 'file' id = 'btnUpLoad' multiple/>
+		<div id = 'photos'>
+		</div>
+			
+		
+		<script>
+		
+			let fileList=[];								//사용자가 추가한 이미지에 대한 정보가 표시된다.
+			let dt = new DataTransfer(); 					//file tag의 정보를 수정하기 위한 객체
+			let photos = document.querySelector('#photos');	//미리보기 이미지
+			let btnUpLoad = document.querySelector('#btnUpLoad');
+			
+			btnUpLoad.onchange = function(ev){
+				let files = ev.srcElement.files;			 // 선택한 파일을
+				if(files.length<=0) return;					 // 아무런 파일도 선택하지 않은 경우
+				
+				console.log('files : ', files);
+			
+				let fileArray = Array.prototype.slice.call(files);	
+				
+				for(f of fileArray){					
+					fileList.push(f);
+					
+					let div = document.createElement('div');
+					let img = document.createElement('img');
+					let chk = document.createElement('div');
+					div.setAttribute('class', 'sub_item');					
+					loadImage(img, f);
+					div.appendChild(img);
+					div.appendChild(chk);
+					chk.innerHTML = 'X';
+					chk.setAttribute('file', f.name);
+					
+					photos.appendChild(div);
+					
+					chk.onclick = function(ev){
+						let ele = ev.srcElement; 				//이벤트가 발생한 태그
+						let parent = ele.parentNode; 			//ele를 포함한 부모 태그
+						let delFile = chk.getAttribute('file'); //setAttribute에서 추가된 f.name을 가져온다.
+						
+						for(i in fileList){
+							if(fileList[i].name == delFile){
+								fileList.splice(i, 1);
+								break;
+							}
+						}
+						
+						photos.removeChild(parent);
+						changeFileTag(btnUpLoad);
+						
+					}
+				}//end of for
+				changeFileTag(this);
+			}//end of onchange
+			
+			function loadImage(img, file){	
+				let reader = new FileReader();
+				reader.readAsDataURL(file);
+				reader.onload=function(/* fev */){
+					let tempImg = new Image();
+					tempImg.src = this.result;
+					img.src = tempImg.src;
+				}
+			}
+			
+			function changeFileTag(fileTag){					//Base64파일로 추가되어 있다. 그래서 경로를 알기 힘들다?
+				dt = new DataTransfer();						//그래서 x버튼에 Base64로 변하기 전의 경로를 미리 저장해놓을 것이다.
+				for(f of fileList){
+					dt.items.add(f);
+				}
+				fileTag.files = dt.files; //file tag 정보를 갱신
+			}			
+			
+		</script>
+	</body>
+</html>

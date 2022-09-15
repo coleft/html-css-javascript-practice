@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>radio.html</title>
+	</head>
+	<body>
+		<form name = 'frm'>
+			<span>아이디</span>
+			<input type='text' name = 'id'/><br/>
+			<textarea cols='40' rows='10' name='target'></textarea>
+			<br/>
+			<label><input type = 'radio' name = 'chk' value = '#000'>검정</label>
+			<label><input type = 'radio' name = 'chk' value = '#f00'>빨강</label>
+			<label><input type = 'radio' name = 'chk' value = '#0f0'>녹색</label>
+			<label><input type = 'radio' name = 'chk' value = '#00f'>파랑</label>
+			<label><input type = 'radio' name = 'chk' value = '#ff0'>노랑</label>
+			<br/>
+			<input type = 'button' value = '확인' name = 'btn'/>
+		</form>
+		<script>
+			
+			let frm = document.frm;
+			
+			/* 페이지를 새로고침한 경우에도 마지막으로 선택한 색상이 유지가 되도록 */
+			let bg = sessionStorage.getItem('bg');
+			let id = sessionStorage.getItem('id');
+			
+			if(id != null) frm.id.value = id;
+			
+			if(bg != null){
+				frm.target.style.backgroundColor = bg;
+				for(index in frm.chk){
+					var tag = frm.chk[index];
+					if(tag.value==bg){
+						frm.chk[index].checked = true;
+					}
+				}
+			}
+			
+			
+			
+			
+			
+			frm.btn.addEventListener('click', function(){
+				for(/* i=0;i<frm.chk.length;i++ */ tag of frm.chk /* v in frm.chk */){
+					if(tag.checked/* ==true 생략 */){
+						frm.target.style.backgroundColor = tag.value;
+						sessionStorage.setItem('bg',tag.value);				
+								/* sessionStorage 새로로고침 해도 유지
+								*LocalStorage는 브라우저 마저 껐다 켜도 유지한다. */
+						sessionStorage.setItem('id',frm.id.value);
+						break;  /* break : 써도 그만 안 써도 그만인데 조금 빨리 끝남 */
+					}
+				}
+			})
+			
+		</script>
+	</body>
+</html>

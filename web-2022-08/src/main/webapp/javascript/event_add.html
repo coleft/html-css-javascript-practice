@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>event_add.html</title>
+	</head>
+	<body>
+		<input type = 'button' value = 'INLINE' onclick='func1()'>
+		<input type = 'button' value = 'ONCLICK' id='btn'/>
+		<input type = 'button' value = 'LISTENER' id='btn2'/>
+		<script>
+			function func1(){
+				let ev = window.event;
+				console.log(ev);
+			}
+			
+			let btn = document.querySelector('#btn');
+			btn.onclick = func1; //callback 함수를 지정(o)
+			//btn.onclick = func1();// 함수 func1 의 실행 결과가 대입(x)
+			//func1();
+			
+			let btn2 = document.querySelector('#btn2');
+			btn2.addEventListener('click',func1);//점점 빈도수 늘어남
+			
+			//위위는 이벤트를 취소하기가 어려워 근데 addEvent~는 쉬워
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>dom_tag_control.html</title>
+		<style>
+			#here{
+				width:200px;
+				border:2px solid #aaa;
+				padding:20px;
+				margin:20px;
+				display:inline-block;
+				text-align:center;				
+			}
+		</style>
+	</head>
+	<body>
+		<div id='dom'>
+			<h1>태그 추가하기</h1>
+				<div id='here'>
+					<button type='button'>그냥버튼</button>
+				</div>		
+		</div>
+		<script>
+			//버튼상자
+			let here = document.querySelector("#here");
+			
+			let appendBtn = document.createElement("input");
+			appendBtn.setAttribute("type", "button");
+			appendBtn.setAttribute("value", "APPEND");
+			here.append(appendBtn);
+			
+			let prependBtn = document.createElement("input");
+			prependBtn.setAttribute("type", "button");
+			prependBtn.setAttribute("value", "PREPEND");
+			here.prepend(prependBtn);
+			
+			let afterBtn = document.createElement("input");
+			afterBtn.setAttribute("type", "button");
+			afterBtn.setAttribute("value", "AFTER");
+			here.after(afterBtn);
+			
+			let beforeBtn = document.createElement("input");
+			beforeBtn.setAttribute("type", "button");
+			beforeBtn.setAttribute("value", "BEFORE");
+			here.before(beforeBtn);
+		</script>
+	</body>
+</html>

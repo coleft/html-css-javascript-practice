@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>array_forEach</title>
+	</head>
+	<body>
+		<div id='result'></div>
+		<script>
+			//for in, for of, forEach
+			let rst = document.getElementById('result');			
+			let ary = ['가', '나', '다', '라'];
+			let str = '';
+			ary.forEach(function(value, index){
+				str += `index = ${index} : ${value} <br/>`; 
+				//따옴표 아님 factic? 여러 문자열을 +기호 없이 쓸 수 있도록
+				//그냥 쓰면 돼, 문자열을 ${index}앞에 index에 위 index를 치환
+				//브라우저 버전 영향 땜에 함부로 쓰지는 말라.
+				
+				//forEach : 순회를 하라 배열을...
+			});
+			rst.innerHTML=str;
+			
+		</script>
+	</body>
+</html>

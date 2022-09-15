@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>image_preview.html</title>
+		<style>
+			#photo_file{
+				display:none;
+			}
+			#photo{
+				width:200px;
+				height:250px;
+				border:2px solid #aaa;
+				border-radius:7px;
+			}
+			#photo:hover{
+				cursor:pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>프로필 사진 등록</h3>
+		<input type='file' id='photo_file' />
+		<img src='../test/img/19.PNG' id='photo'/>
+		
+	<script>
+		let btnFile = document.querySelector('#photo_file');		
+		let photo = document.querySelector('#photo');
+		
+		photo.onclick = function(){
+			btnFile.click();	//onclick:~했을 때, click:그냥 이벤트 발생함			
+		}
+		/*
+		function preview(ev){
+			let event = ev || window.event;
+			let file = event.srcElement.files[0];	
+			
+			//FileReader 생성
+			let reader = new FileReader();
+			reader.onload=function(fev){				
+				let img = new Image();
+				img.src = reader.result;
+				photo.src = img.src;
+			}
+			reader.readAsDataURL(file);
+		}
+		*/
+		
+		btnFile.onchange = function(ev){
+			let file = ev.srcElement.files[0];
+			let reader = new FileReader();
+			reader.readAsDataURL(file);
+			reader.onload=function(fev){
+				let tempImg = new Image();
+				tempImg.src = this.result;
+				photo.src = tempImg.src;
+			}
+		}
+		
+	</script>
+	</body>
+</html>

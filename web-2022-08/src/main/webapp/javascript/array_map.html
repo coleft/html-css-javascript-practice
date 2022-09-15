@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>array_map.html</title>
+	</head>
+	<body>
+		<script>
+		//배열 내 모든 요소에 대해 callback 함수를 호출한 결과를 모아
+		//map으로 새로운 배열을 만들 수 있다.
+		let arry=[1.2, 0.5, 45.9, 34.01];
+		let newArry = arry.map(function(value){
+			return Math.ceil(value);	//Math.ceil => value값을 절상함.
+										//Math.floor => 절하
+										//Math.round => 반올림
+		});
+		console.log('arry:',arry);
+		console.log('newArry:',newArry);
+		
+		let newArry2 = arry.map(	(value)=>(Math.ceil(value))	);
+		console.log(newArry2);
+		</script>
+	</body>
+</html>

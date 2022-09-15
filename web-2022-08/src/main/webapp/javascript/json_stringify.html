@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>json_stringify.html</title>
+	</head>
+	<body>
+		<form name='frm' method='post'>
+			<span>아이디</span>
+			<input type='text' name='id' value='a001'/><br/>
+			
+			<span>성명</span>
+			<input type='text' name='name' value='길동이'/><br/>
+			
+			<span>성별</span>
+			<label><input type='radio' name='gender' value='m'>남자</label>
+			<label><input type='radio' name='gender' value='f'>여자</label>
+			<br/>
+			<span>취미</span>
+			<label><input type='checkbox' name='hobby' value='스포츠'>스포츠</label>
+			<label><input type='checkbox' name='hobby' value='여행'>여행</label>
+			<label><input type='checkbox' name='hobby' value='독서'>독서</label>
+			<label><input type='checkbox' name='hobby' value='명상'>명상</label>
+			
+			<br/>
+			<input type='button' value='전송' name='btnSend'>
+			
+		</form>
+		<script>
+		
+			const frm = document.frm; //let var const
+			frm.btnSend.addEventListener('click', function(){
+				let g = (frm.gender[0].checked)? frm.gender[0].value : frm.gender[1].value;
+				let h = [];
+				for(tag of frm.hobby){
+					if(tag.checked) h.push(tag.value);
+				}
+				
+				let json={
+						id : frm.id.value,
+						name : frm.name.value,
+						gender : g,
+						hobby : h
+				}
+				
+				console.log('json : ', json)
+				console.log('string : ', JSON.stringify(json))
+			});			
+			
+		</script>
+	</body>
+</html>

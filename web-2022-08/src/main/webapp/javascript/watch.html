@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>watch.html</title>		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+			#main{
+				border:3px solid #000;
+				border-radius:30px;
+				background-color:#002;
+				width:700px;
+				height:270px;			
+				margin:30px auto;
+				margin-top: 100px;
+			}
+			#nal{
+				margin:20px;
+				margin-left:30px;
+				font-size:30px;
+				color:white;
+				font:Gill-sans;
+				font-family:'Orbitron';
+			}
+			#time{
+				font-size:100px;
+				text-align:center;
+				color:white;
+				font-family:'Orbitron';
+			}
+		</style>
+	</head>
+	<body>
+		<div id = 'main'>
+			<div id = 'nal'>			
+			</div>
+			<div id = 'time'>			
+			</div>
+		</div>
+		<script>
+			
+			let nal = document.querySelector('#nal');
+			let time = document.querySelector('#time');
+			setInterval(createDate, 1000);
+			function createDate(){			
+				let today = new Date();
+				let day = ['일','월','화','수','목','금','토'];
+				let y = today.getFullYear();
+				let m = today.getMonth()+1;
+				m = m<10 ? `0${m}` :m;
+				let d = today.getDate();
+				d = d<10 ? `0${d}` :d;
+				let w = day[today.getDay()];
+				
+				a=y +"-"+m+"-"+d+" ("+w+")";
+				
+				let h = today.getHours();
+				h = h<10 ? `0${h}` :h;
+				let mi = today.getMinutes();
+				mi = mi<10 ? `0${mi}` :mi;
+				let s = today.getSeconds();
+				s = s<10 ? `0${s}` :s;
+				
+				b=h+" : "+mi+" : "+s;
+				
+				nal.innerHTML=a;
+				time.innerHTML=b;				
+			}
+			
+		</script>
+	</body>
+</html>

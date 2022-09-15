@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>scope.html</title>
+	</head>
+	<body>
+	<script>
+		//전역형
+		var name = 'hong';
+		age = 19;
+		
+		function a(){
+			
+			console.log('name:', name);
+			console.log('age: ', age);
+			name = '홍길동';
+			age = 30;
+		}		
+		a();
+	</script>
+	<script>
+		//지역형
+	function b(){
+		var name2 = 'hong';
+		var age2 = 19;
+		console.log('name2:', name);
+		console.log('age2:', age);
+		name2='홍길동';
+		age2=30;
+		}
+		
+		b();
+		console.log('name2: ',name2);
+		console.log('age2:', age2);
+	</script>
+	<script>
+		//var와 let 차이
+		//var는 2번 이상 선언이 가능함.
+		var name = 'hong';
+		var name = 'kim';
+		
+		//let은 한 번만 선언 가능함.
+		let age = 10;
+		let age = 20; //오류 개발자들이 let을 선언한다. 저절로 오류 선언해주기 때문이다.
+	</script>
+	<script>
+		//function scope test
+		console.log("function scope.....................");
+		(function a(){
+			for(var i = 1; i <5 ; i++){
+				console.log(i); //1~4까지 출력
+			}
+			console.log(i); // 5 출력
+		})(); //이름 없는 함수
+		
+		//block scope test
+		console.log("block scope...........................");
+		(function(){
+			for(let i = 1; i<5 ; i++){
+				console.log(i); //1~4까지 출력
+			}
+			console.log(i); //i에서 오류 발생
+		})();
+	</script>
+	</body>
+</html>

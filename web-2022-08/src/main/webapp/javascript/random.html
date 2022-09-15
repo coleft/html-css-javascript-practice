@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>random.html</title>
+	</head>
+	<body>
+		<script>
+			for(i=0;i<20;i++){
+				rnd = Math.random();
+				console.log(rnd);
+			}
+			console.log('-------------');
+			
+			//1~100 사이 난수 10개
+			for(i=0; i<10; i++){
+				rnd = parseInt(Math.random()*100)+1;
+				console.log(rnd);
+			}
+			console.log('--------------');
+			//1~45 사이 난수 6개
+			for(i=0;i<6;i++){
+				console.log(rnd); //중복 발생
+			}
+			console.log('--------------');
+			//난수를 중복 없이 6개 만들기
+			let lotto = [];
+			while(lotto.length<6){
+				rnd = parseInt(Math.random()*45)+1;
+				if(lotto.indexOf(rnd) == -1){	//indexOf -1출력 : 존재하지 않는다.
+					lotto.push(rnd);
+				}
+			}
+			console.log('lotto',lotto.sort(num));
+			function num(x,y){
+				return x-y;
+			}
+			//난수를 중복 없이 6개 만들기 type2
+			lotto = new Array(45);
+			for(i=0; i<lotto.length; i++) lotto[i] = i+1;
+			for(i=0; i<1000; i++){
+				p=parseInt(Math.random()*44)+1;
+				k=lotto[0];
+				lotto[0]=lotto[p];
+				lotto[p]=k
+			}
+			r=lotto.slice(0,6);
+			r.sort();
+			console.log(r);
+		</script>
+	</body>
+</html>
+
+
+

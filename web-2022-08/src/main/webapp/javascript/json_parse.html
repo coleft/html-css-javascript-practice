@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>json_parse</title>
+	</head>
+	<body>
+		<script>
+		
+			/*	JSON.parse : 문자열로 되어 있는 json형식의 데이터를
+					   	 	 json object로 변환시키는 함수		*/
+			
+			//리터럴, 맵구조
+			let json_str = '{"id":"hong"}';		//키값과 문자열에 큰 따옴표 작은 따옴표에 엄격함 다른 기종이나 언어를 위해서
+			let json_obj =JSON.parse(json_str);	
+			console.log(json_obj);
+			
+			//배열
+			json_str = '["123","abc","가나다"]';
+			json_obj = JSON.parse(json_str);
+			console.log(json_obj);
+			
+			//혼합형
+			json_str = '{"ids" : ["abc","123","가나다"]}';
+			json_obj = JSON.parse(json_str);
+			console.log(json_obj);
+			
+		</script>
+	</body>
+</html>

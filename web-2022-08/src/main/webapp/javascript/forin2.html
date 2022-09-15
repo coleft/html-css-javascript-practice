@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>forin2.html</title>
+	</head>
+	<body>
+		<h2>태그명을 입력하세요</h2>
+		<input type = 'text' id = 'tag' value = 'form'/>
+		<input type = 'button' value = '실행' id = 'btn'/>
+		<div id = 'result'></div>
+		
+		<script>
+			let btn = document.querySelector('#btn');
+			
+			btn.onclick = func; //그냥 호출(콜백함수는 () 없음.)//input에서 직접하면 func()쳐줘야함.
+			// btn.addEventListener('click', func()); 이것도 실행 방법임.
+			function func(){ //어디선가 function을 호출해줘야해 예를 들어 버튼 누르는거
+				let result = document.querySelector('#result');
+				let tag = document.querySelector('#tag');
+				let obj = document.createElement(tag.value);
+				let str = '<table><tr><th>Attribute</th><th>value</th></tr>';
+				for(x in obj){
+					str +=  '<tr>'
+						+   '	<td>' + x + '</td>'
+						+	'	<td>' + obj[x] + '</td>'
+						+	'</tr>';
+				}
+				str += '</table>';				//숫자1옆에 있는 `키 = 뺵틱을 쓰면 문자열을 여러줄 처리
+												//할때 더 쉽게 처리할 수 있음.
+				result.innerHTML = str;			//for in 은 변수가 인덱스
+												//for of는 요소값
+			}
+		</script>
+	</body>
+</html>

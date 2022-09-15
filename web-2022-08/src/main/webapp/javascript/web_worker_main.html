@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>web_worker_main</title>
+	</head>
+	<body>
+		<input type='text'>
+		<script>
+			let worker1 = new Worker('../js/web_worker1.js');
+			let worker2 = new Worker('../js/web_worker2.js');
+			let worker3 = new Worker('../js/web_worker3.js');
+			
+			worker1.onmessage = function(ev){
+				console.log('worker1=',ev.data);
+			}
+			
+			worker2.onmessage = function(ev){
+				console.log('worker2=',ev.data);
+			}
+			
+			worker3.onmessage = function(ev){
+				console.log('worker3=',ev.data);
+			}
+			
+		</script>
+	</body>
+</html>

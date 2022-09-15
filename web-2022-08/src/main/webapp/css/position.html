@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>position</title>
+		<style>
+		.first, .second{
+			width: 300px;
+			height: 300px;
+			border: 3px solid red;	
+			margin: 100px;
+			position: relative;			
+		}
+		.first>div{
+			height:100px;
+			width: 100px;
+			position: absolute;
+		}
+		.first>div:nth-child(1){
+			background-color:coral;
+		}
+		.first>div:nth-child(2){
+			background-color: powderblue;
+			left: 100px;
+		}
+		.first>div:nth-child(3){
+			background-color: green;
+			top:100px;
+		}
+		.first>div:nth-child(4){
+			background-color: yellow;
+			right:0px;
+			bottom:0px;
+		}
+		.second>div{
+			position:relative;
+			width:100px;
+			height:100px;
+			border:1px solid #f00;			
+		}
+		.second>div:nth-child(2){
+			left:100px;
+			top: -100px;
+		}
+		.second>div:nth-child(3){
+			top: -100px;
+		}
+		.second>div:nth-child(4){
+			top: -200px;
+			left: 100px;
+		}
+		.fixed>img{
+			position:fixed;
+			top:250px;
+		}
+		</style>
+	</head>
+	<body>
+		<div class = 'first'>
+			<div>A</div>
+			<div>B</div>
+			<div>C</div>
+			<div>D</div>
+		</div>
+		<div class = 'second'>
+			<div>A</div>
+			<div>B</div>
+			<div>C</div>
+			<div>D</div>
+		</div>
+		<div class = 'fixed'>
+			<img src= '../images/b.PNG'/>
+		</div>
+	</body>
+</html>

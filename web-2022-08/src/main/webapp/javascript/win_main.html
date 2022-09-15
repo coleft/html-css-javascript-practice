@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>win_main.html</title>
+	</head>
+	<body>
+		<input type='button' value='브라우저 열기' onclick='openWin()'/><br/>
+		<span>송신자료 : </span>
+		<input type='text' value='내용이 전송됨' id='text1'/>
+		<input type='button' value='송신' id='btnSend'><br/>
+		<span>수신자료 : </span><input type='text' id = 'text2'/>
+		<input type='button' value='수신' id='btnReceive'/>
+		<script>
+			function openWin(){
+				win = window.open('win_sub.html','win', 'width=400px, height=300px');
+				// url주소, name, '옵션 생략'
+			}
+			// 송신 버튼, 수신 버튼에 이벤트 추가
+			
+			// 브라우저 열기로 나오는 창은 win 브라우저 열기가 있는 창은~
+			
+			let btnSend, btnReceive;
+			btnSend = document.querySelector('#btnSend');
+			btnReceive = document.querySelector('#btnReceive');
+			
+			btnSend.addEventListener('click', function(){
+				let source = document.querySelector('#text1'); // 전송할 문자열이 있는 박스
+				let target = win.document.querySelector('#target');
+				target.value = source.value;
+			});
+			btnReceive.addEventListener('click', function(){
+				let source = document.querySelector('#text2'); // 전송할 문자열이 있는 박스
+				let target = win.document.querySelector('#target');
+				source.value = target.value;
+			});
+			
+		</script>
+	</body>
+</html>

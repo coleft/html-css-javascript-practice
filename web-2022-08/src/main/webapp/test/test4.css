@@ -1,0 +1,41 @@
+@charset "UTF-8";
+#title>h1{	
+	color:#33c;
+	text-align:center;
+	font-family:Gill-sans;
+	border: solid;
+}
+main{
+	margin-top:32px;	
+}
+.pic{			
+	width:100%;	    
+    height:100%;        
+    border-radius:20px;
+}
+
+@media (min-width: 800px){
+	body{
+		text-align:center;
+	}
+	#title>h1{
+		color:#33c;
+		font-family:Gill-sans;
+		border: solid;
+		
+	}
+	main{
+		margin-top:32px;
+		margin:10px auto;
+	}
+	.package{
+		display:inline-block;
+		width:180px;
+		margin:2px;
+	}
+	.pic{	
+		width:100%;	    
+	    height:200px;    
+	    border-radius:5px;
+	}
+}

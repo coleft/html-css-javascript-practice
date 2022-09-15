@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>array_reduce2.html</title>
+	</head>
+	<body>
+		<script>
+			const students = [
+				{name : 'hong', grade : 1},
+				{name : 'kim', grade : 1},
+				{name : 'lee', grade : 2},
+				{name : 'park', grade : 3},
+				{name : 'choi', grade : 1}
+			];
+			let groupby = function(array, key){
+				let r = array.reduce(function(data/* 초기값들어감 or 첫번째 */, obj/* 첫번째값 혹은 두번째 값 */){
+					var k = obj[key]; 	//(원래라면 obj.grade이지만 함수 내부라)
+					if(!data[k]/*data={1:[{}, {}, {} ......]}*/) data[k] = [];
+					data[k].push(obj);
+					return data;
+					
+				}/* 콜백 */,{}/* 초기값 */);
+				
+				return r;
+			};			
+			console.log(groupby(students, 'grade'));
+			
+			// for of를 사용하여 1학년만 출력
+			let gp = groupby(students, 'grade');
+			console.log(gp);
+			
+			for(r of gp['1']){console.log('name :', r.name, 'grade:', r.grade)};
+			
+			// forEach를 사용하여 1학년만 출력
+			console.log('---------------------');
+			gp['1'].forEach(function(v){
+				console.log('name:', v.name, 'grade:',v.grade);
+			})
+			
+		</script>
+	</body>
+</html>

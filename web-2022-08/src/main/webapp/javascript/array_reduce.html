@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>array_reduce</title>
+	</head>
+	<body>
+		<script>
+			let array=[3,4,5,6,7,8,9,0,1,2,432,5,2,3,623,7,2,3,57];
+			let reduce = array.reduce(function(cur, now){
+				cur[now] = ++cur[now] || 1; //++
+				return cur;
+			},{})
+			
+			console.log(reduce);
+			
+			const students = [
+				{name : 'hong', grade : 1},
+				{name : 'kim', grade : 1},
+				{name : 'lee', grade : 2},
+				{name : 'park', grade : 2},
+				{name : 'choi', grade : 1}
+			];
+			
+			let groupby = function(array, key){
+				return array.reduce(function(data,obj){
+					var k = obj[key];
+					if(!data[k]){
+						data[k]=[];
+					}
+					data[k].push(obj);
+					return data;
+				},{});
+			}
+			console.log(groupby(students, 'grade'));
+		</script>
+	</body>
+</html>

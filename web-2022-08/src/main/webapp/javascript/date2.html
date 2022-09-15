@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>date2.html</title>
+	</head>
+	<body>
+		<form name = 'frm'>
+			<span>아이디</span>
+			<input type='text' name='id' value='hong'/><br/>
+			
+			<span>가입일자</span>
+			<input type='date' name='nal'/><br/>
+			
+			<span>생일</span>
+			<input type='date' name='birth'/><br/>			
+		</form>
+		
+		<script>
+			let frm = document.frm;
+			
+			//Date type -> date tag
+			frm.nal.valueAsDate = new Date(); //그냥 value 쓰면 안 들어온다.	
+			
+			//String type -> date tag
+			let d = "2022-01-15";
+			frm.birth.valueAsDate = new Date(Date.parse(d)); //쓸 땐 Date 객체로 바꿔야한다.	
+		</script>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>array5.html</title>
+	</head>
+	<body>
+		<script>
+		//내림차순
+			let s = [78, 123, 9, 56, 432, 5, 2];
+			console.log(s.sort(mysort));	//정렬방식을 하나의 함수로 표현해서...
+											
+			function mysort(x, y){		//리턴 결과값이 양수이면 x,y자리가 바뀜.				
+				return y-x;				
+			}
+		//오름차순
+			console.log(s.sort(yoursort));
+		
+			function yoursort(x,y){
+				return x-y;
+			}
+			
+			
+		</script>
+	</body>
+</html>

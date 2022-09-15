@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>for4.html</title>
+</head>
+<body>
+	<script>
+		// 1) 1~100까지의 합계 구하여 출력
+		let result = 0;
+		for(let i = 1; i<=100; i++){
+			result = result + i;			
+		}
+		document.write(result + '<br/>');
+		
+				
+		// 2) 1~100까지 짝수 합 구하여 출력
+		
+		let sum = 0;
+		for(let i = 1; i<=100; i++){
+			if(i%2==0){
+				sum = sum+i;
+			}
+		}
+		document.write(sum + '<br/>');
+		
+		// 3) 1~100까지 합계가 2000이 초과되는 시점의 합계 출력
+		let sum2=0;
+		for(let i = 1; ; i++){
+			sum2 = sum2 + i;
+			if(sum2>2000){
+				break;
+			}
+		}
+		document.write(sum2 + '<br/>'); //break는 for나 switch문에서 멈춰버림
+		
+		// 숙제: x이상 y이하의 구구단 출력
+
+
+	</script>
+</body>
+</html>

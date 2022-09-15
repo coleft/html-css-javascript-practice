@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+		<title>array_sort.html</title>
+		</head>
+	<body>
+		<script>
+			// sort 함수는 배열에 있는 값을 모두 문자 취급하여 정렬함.
+			
+			//selected sort 방법이다.
+			let s = [5,3,7,1,9,6];	
+			console.log(s);
+			for(i=0; i<s.length-1; i++){
+				min=s[i];  //최소값.
+				for(j=i+1;j<s.length;j++){	
+					if(s[i]>s[j]){
+						min = s[j];
+						s[j] = s[i];	//swapping logic
+						s[i] = min;						
+					}				
+				}
+				console.log(s);
+			}
+			
+			//array.sort() <--함수명 양수->교환, 음수 ->불변
+			// 숫자, 문자 --> 문자형
+			
+			
+		</script>
+	</body>
+</html>

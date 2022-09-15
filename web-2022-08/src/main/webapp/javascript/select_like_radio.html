@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>SelectBox</title>
+	</head>
+	<body>
+		<b><h3>Select를 이용하여 바탕 색상 바꾸기</h3></b>
+		<form name="ff">
+			<input type = text name=tt>
+			<select name="sel" onChange="change(this.form)">
+				<option value = "#000000">검은색
+				<option value = "#006600">녹색
+				<option value = "#00FF00">연두색
+				<option value = "#FF0000">빨간색
+				<option value = "#FFFFFF">흰색
+				<option value = "coral">코랄
+			</select>
+			<input type="button" value="coral" onClick="mclick(this.form, 'coral')">			
+		</form>
+		<script>
+		
+		let bg;
+		bg = sessionStorage.getItem('bg');
+		if(bg!=null){
+			let ff = document.ff;
+			for(tag of ff.sel){
+				if(tag.value==bg){
+					ff.sel.value = bg;
+					ff.tt.style.backgroundColor = bg;
+				}
+			}
+		}
+		
+		function mclick(ff, v){
+			ff.tt.style.backgroundColor = v;
+			save('coral');
+		}
+		
+		function change(f){
+			let color = ff.sel.options[ff.sel.options.selectedIndex].value;
+			ff.tt.style.backgroundColor = color;
+			save(color);
+		}
+		
+		function save(bg){
+			sessionStorage.setItem('bg', bg);
+		}
+		
+		/*
+			let ff = document.ff;
+			let white = sessionStorage.getItem('white');
+			let color = sessionStorage.getItem('color');
+		
+			if(white != null){
+				ff.tt.style.backgroundColor = white;
+			}
+			
+			if(color != null){
+				ff.tt.style.backgroundColor = color;	
+			}		
+		
+			function mclick(f,n){
+				f.tt.style.backgroundColor=n;
+				sessionStorage.setItem('white', f.tt.style.backgroundColor);
+			}
+			
+			function change(f){
+				f.tt.style.backgroundColor=f.sel.options[f.sel.options.selectedIndex].value;
+				sessionStorage.setItem('color', f.tt.style.backgroundColor);
+			}
+		*/
+		</script>
+	</body>
+</html>

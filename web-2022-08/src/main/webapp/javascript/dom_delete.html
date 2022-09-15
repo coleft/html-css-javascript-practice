@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>dom_delete.html</title>
+	</head>
+	<body>
+		<div id='dom'>
+			<div id='del'>삭제될 항목</div>
+			<button type='button' onclick='delDiv()'>DIV 삭제</button>
+			<br/>
+			<select id='sel'>
+				<option value='강아지'>강아지</option>
+				<option value='송아지'>송아지</option>
+				<option value='망아지'>망아지</option>
+				<option value='삭제돼지'>삭제돼지</option>				
+			</select>
+			<br/>
+			<button type='button' onclick='delOption()'>OPTION 삭제</button>
+		</div>
+		<script>
+			function delDiv(){
+				let div = document.querySelector('#del');
+				div.remove(); //삭제될 항목이 삭제됨 객체.remove()
+			}
+			
+			function delOption(){
+				let sel = document.querySelector('#sel');
+				sel.removeChild(sel[3]); //삭제돼지가 삭제됨 부모.removeChild(자식)				
+			}
+		</script>
+	</body>
+</html>

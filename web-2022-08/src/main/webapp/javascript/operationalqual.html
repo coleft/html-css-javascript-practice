@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+	//개조작업
+	function mission1(){
+		var height = prompt('입력받기', '키');
+		var weight = prompt('입력받기', '몸무게');
+		height = Number(height);
+		weight = Number(weight);
+		var arr =[];
+		arr[0] = height;
+		arr[1] = weight;
+		let a = (arr[0]>=200)||(arr[1]>=150);
+		console.log(a);
+		}
+		mission1();
+		
+	function mission2(){
+		var korean = prompt('입력받기', '국어');
+		var english = prompt('입력받기', '영어');
+		korean = Number(korean);
+		english = Number(english);
+		avg = (korean + english)/2;
+		var arr = [korean, english];
+		let b = (arr[0]<40||arr[1]<40)||(avg<60)
+		console.log(b);
+		}
+		mission2();
+		
+	function mission3(){
+		var member = confirm('회원가입 하셨습니까?');
+		var cost = prompt('입력받기', '구매 금액');
+		cost = Number(cost);
+		let c = (member == true)&&(cost>=10000);
+		console.log(c);
+		}
+		mission3();
+	
+	</script>
+</body>
+</html>

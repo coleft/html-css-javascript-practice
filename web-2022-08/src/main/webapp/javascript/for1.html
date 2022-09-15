@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>for1.html</title>
+	</head>
+	<body>	
+		구구단을 input로 입력받아 output 영역에 출력하시오.
+		
+		
+		<input type = 'text' id = 'gugudan' value = '2'/>
+		
+		<input type = 'button' id = 'btn' value = '실행'/>
+		<br/>
+		<output id = 'output'></output>
+		
+		<script>
+		 	let btn = document.querySelector('#btn');
+		 	btn.onclick = function(){
+		 		let dan = Number( document.querySelector('#gugudan').value);
+		 		let output = document.querySelector('#output');
+		 		let str='';
+		 		for (let i = 1 ; i<10 ; i++){
+		 			str += ( dan + " * " + i + " = " + (dan*i));
+		 			str += ("<br/>");
+		 		}
+		 		output.innerHTML = str;
+		 	}
+		
+		
+		 	for(let r = 0; r<5; r++){
+				for(let c=1; c<r+1; r++){				
+					document.write(c + ' ');
+					}
+				document.write('<br/>');
+				}
+			
+		
+		
+		
+			// 10 9 8 7 6 ... 1
+			/*
+				for(var i = 1 ; i <= 10 ; i++) {
+				document.write(i);
+			}				
+			*/
+			//구구단 5단 출력
+			/*
+		let dan = 5;
+			for(let i = 1; i < 10; i++){
+				document.write(dan + "*" + i + "=" + (dan*i));
+				document.write("<br/>");
+			}
+			*/
+		</script>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>text_file_reader.html</title>
+		<style>
+			#result{
+				padding:20px;
+				border-top:3px solid #aaa;
+				border-bottom:3px solid #aaa;
+				min-height:300px;
+			}
+		</style>
+	</head>
+	<body>
+		<span>파일을 선택하세요</span>
+		<input type = 'file' id = 'file' onchange='preview()'/>
+		<output id = 'file_name'></output>
+		<br/>
+		<div id = 'result'></div>
+	</body>
+	<script>
+		let doc = '';	//읽은 파일의 내용
+		function preview(ev){
+			let file_name = document.querySelector('#file_name');
+			// file 태그에 의해 선택한 파일명 가져오기
+			let event = ev || window.event;
+			fn = 'file_name : ' + event.srcElement.files[0].name;
+			file_name.innerHTML = fn;
+			
+			// 텍스트 파일을 읽기 위한 FileReader 생성
+			let reader = new FileReader();
+			let file = event.srcElement.files[0];
+			reader.readAsText(file, 'utf-8');
+			
+			reader.onload = function(fev){//텍스트 파일을 모두 읽은 경우 즉 문서가 모두 로드된 후에 실행된다.
+				let rs = document.querySelector('#result');
+				doc = this.result;	//자신의 멤버들을 뜻함, self는 그냥 자신
+				doc = doc.replace(/\</gi, '&lt');
+				doc = doc.replace(/\>/gi, '&gt');
+				doc = doc.replace(/\n/gi, '<br/>');
+				
+				rs.innerHTML = doc;
+			}
+		}
+	</script>
+</html>

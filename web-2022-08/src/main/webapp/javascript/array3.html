@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>array3.html</title>
+	</head>
+	<body>
+		<form name = 'frm'>
+			<span></span>
+			<input type = 'text' name = 'findStr'/>			
+			<input type = 'button' value = '검색' name = 'btn'/><br/>
+			<span>연락처</span>
+			<output name = 'output'></output>
+		</form>
+		<script>
+			//이름과 연락처를 2차원 배열에 저장한 후 이름으로 연락처를 검색
+		let m = [
+			['kim', '010'],
+			['lee', '012'],
+			['nam', '017'],
+			['han', '018']
+		];
+		
+		/*
+		console.log(m[0][0]); //kim
+		console.log(m[0][1]); //010
+		console.log(m[0]);
+		console.log(m);
+		*/
+		
+		// nam 씨의 연락처는?
+		
+		
+		
+		function Find(n){
+			let frm = document.frm;
+			let phone = '찾는 연락처가 없음.';
+			for(let r=0;r<m.length;r++){
+				if(m[r][0] == n){
+					phone = m[r][1];
+				}
+			}
+			//frm.output.innerHTML = " " + phone;
+			console.log('연락처:', phone);
+			return phone;
+		}
+		Find('han');
+		
+		let frm = document.frm;
+		frm.btn.onclick = function(){
+			let name = frm.findStr.value;
+			let output =frm.output;
+			let phone = Find(name);
+			output.innerHTML = phone;
+		}
+		
+		
+		
+		//console.log('연락처:', phone);		
+		</script>
+	</body>
+</html>

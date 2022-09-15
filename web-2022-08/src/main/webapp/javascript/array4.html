@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>array4.html</title>
+	</head>
+	<body>
+		<script>
+			let mountain = ['백두산', '금강산', '설악산', '한라산'];
+			let river = ['두만강', '낙동강', '한강', '섬진강'];
+			//concat ~ slice까지
+			
+			// 1) concat
+			var all = mountain.concat(river);
+			wri(all + "<br/>");			
+			
+			// 2) join
+			wri(all.join("<-->") + "<br/>");
+			wri(all.join("*-*-*-*-*-*-*-*") + "<br/>");
+			
+			// 3) reverse
+			wri(all.reverse() + "<br/>");
+			wri(mountain.reverse() + "<br/>");
+			wri(river.reverse() + "<br/>");
+			
+			// 4) push 잘 모르겠음.....
+			wri(mountain.push('에베레스트') + "<br/>");
+			wri(all.push('청천강') + "<br/>");
+			
+			// 5) shift
+			ary = new Array(1,2,3);
+			ary.shift();
+			document.write(ary + "<br/>");
+			ary.shift();
+			wri(ary + "<br/>");
+			
+			// 6) pop
+			ary = new Array(1,2,3);
+			ary.pop();
+			wri(ary + "<br/>");
+			
+			// 7) splice
+			ary = new Array(1,2,3,4,5,6,7);
+			ary.splice(2,3);
+			wri(ary + "<br/>");
+	
+			
+	function wri(x){
+		document.write(x);
+		
+	}
+	
+	
+			// 8) slice
+			ary = new Array(0,1,2,3,4,5,6,7,8,);
+			newArray = ary.slice(3,7);
+			wri(newArray);
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

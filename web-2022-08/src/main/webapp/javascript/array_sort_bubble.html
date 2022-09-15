@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>array_sort_bubble</title>
+	</head>
+	<body>
+	<script>
+	//bubble sort
+	
+	let s = [9,1,5,3,8,2];
+	let change = true;
+	console.log(s);
+	while(change){
+		change = false;
+		for(i=0;i<s.length-1;i++){
+			if(s[i]>s[i+1]){
+				min = s[i+1];
+				s[i+1] = s[i];
+				s[i] = min;
+				change = true;
+			}
+		}
+		console.log(s);
+	}
+	
+	
+	</script>	
+	</body>
+</html>
