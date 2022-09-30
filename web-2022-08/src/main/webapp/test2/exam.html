@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>exam.html</title>
+		<link rel = "stylesheet" href = "./exam.css"/>
+	</head>
+	<body>
+		<form class = "frm" action = "#" method="POST">	
+			<div class = "title">
+				<span class = "title_txtg">YOUR INFORMATION</span>
+			</div>		
+			<div class = "container">
+				<div class = "box">
+					<span class = "txtg">ID</span>
+					<input class = "nptg" type="text"/>
+				</div>
+				<div class = "box">
+					<span class = "txtg">PASSWORD</span>
+					<input class = "nptg" type="password"/>
+				</div>
+				<div class = "box">
+					<span class = "txtg">GENDER</span>
+					<div class="nptg">			
+						<input type="radio" name = "gender" value ="BOY"/>
+						<label for = "BOY">BOY</label>
+						<input type="radio" name = "gender" value ="GIRL"/>
+						<label for = "GIRL">GIRL</label>
+					</div>	
+				</div>
+				<div class = "box">
+					<span class = "txtg">PASTIME</span>
+					<label class = "nptg"><input type="checkbox" name="sports" value="football"> football</label>
+					<span class = "txtg_hide">PASTIME</span>
+      				<label class = "nptg"><input  type="checkbox" name="sports" value="basketball"> basketball</label>
+      				<span class = "txtg_hide">PASTIME</span>
+      				<label class = "nptg"><input type="checkbox" name="sports" value="volleyball"> volleyball</label>
+      				<span class = "txtg_hide">PASTIME</span>
+      				<label class = "nptg"><input type="checkbox" name="sports" value="table tennis"> table tennis</label>
+				</div>
+				<div class = "btnbox">
+					<input class = "btn" type="button" value="CONFIRM"/>
+				</div>
+			</div>		
+		</form>
+	</body>
+</html>
+
