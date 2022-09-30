@@ -1,0 +1,12 @@
+@charset "UTF-8";
+#main div{
+	display: inline-block;
+}
+.graphA{
+	width:300px;
+	background-color:#f00;
+}
+.graphB{
+	width:100px;
+	background-color:#0f0;
+}
