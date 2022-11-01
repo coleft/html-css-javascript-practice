@@ -1,10 +1,10 @@
 @charset "UTF-8";
-body{
+body .member_control_body{
 	margin:0;
 	padding:0;
 	box-sizing:border-box;
 }
-main{	
+main .member_control_main{	
 	width:1200px;
 	min-height:400px;
 	margin:30px auto;

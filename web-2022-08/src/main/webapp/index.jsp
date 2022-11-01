@@ -16,18 +16,18 @@ if(request.getParameter("inc")!=null){
 
 String sessionId = (String)session.getAttribute("sessionId");
 %>	
-		<main>
+		<main class = 'realmain'>
 			<div class = 'login'>
 			<%if(sessionId == null){ %>
 				<a href = 'index.jsp?inc=member/login.jsp' style="color:darkblue;">로그인</a>
 			<%}else{ %>
 				[<%=sessionId %>님 방가]
-				<a href = 'member/logout.jsp' style="color:darkblue;">로그아웃</a>			
+				<a href = 'member/logout.jsp' style="color:darkblue;">로그아웃</a>	
 			<%} %>
 			
 			</div>
 			<header>
-				<img src = "images/서울.gif" id='logo'/>				
+				<img src = "images/서울.gif" id='logo'/>
 				<nav>
 					<a href='index.jsp?inc=student/student_list.jsp'>학생관리</a>
 					<a href='index.jsp?inc=javascript/score_crud.html'>성적관리</a>

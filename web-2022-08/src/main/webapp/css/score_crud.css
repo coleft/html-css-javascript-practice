@@ -1,6 +1,6 @@
 @charset "UTF-8";
-main{
-	background-color:#fff;
+main #score_crud_main{
+	background-color:#333;
 	width:1600px;
 	min-height:500px;
 	margin:30px auto;
@@ -35,23 +35,24 @@ form>span{
 }
 #left{
 	width:290px;
-	height:180px;
+	height:200px;
 	padding:4px;
 	border:2px solid white;
 	float:left;
-	background-color:#222;
+	background-color:#555;
 	margin-left:30px;
 	border-radius:30px;
 }
 #right{
 	border:2px solid white;
 	padding:4px;
-	background-color:#222;
+	background-color:#555;
 	float:right;
-	width: 1200px;
+	width: 1000px;
 	text-align:center;
 	margin-right:30px;
 	border-radius:30px;
+	
 }
 .title{
 	border-bottom:3px solid white;
@@ -62,19 +63,19 @@ form>span{
 	text-align:center;
 }
 .serial{
-	width:250px;
+	width:230px;
 	display:inline-block;
 }
 .id{
-	width:250px;
+	width:230px;
 	display:inline-block;
 }
 .subject{
-	width:250px;
+	width:230px;
 	display:inline-block;
 }
 .score{
-	width:250px;
+	width:230px;
 	display:inline-block;
 }
 .item:hover{
@@ -84,4 +85,8 @@ form>span{
 #caution{
 	color:#ce90fa;
 	text-align:center;
+}
+.items{
+	height : 250px;
+	overflow: auto;
 }

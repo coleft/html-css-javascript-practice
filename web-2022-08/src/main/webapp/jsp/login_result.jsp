@@ -15,7 +15,7 @@ String pwd = request.getParameter("pwd");
 Login l = new Login();
 boolean b = l.login(mId, pwd);
 if(b){
-	session.setAttribute("sessionId", "a001");
+	session.setAttribute("sessionId", mId);
 	response.sendRedirect("../index.jsp");
 }else{
 	out.print("<script>alert('넌 누구니?');</script>");
