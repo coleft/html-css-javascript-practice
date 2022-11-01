@@ -4,15 +4,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel = 'stylesheet' href = './css/login_div.css'/>
 <title>member/login.jsp</title>
 </head>
 <body>
-<div class = 'login'>
+<div id = 'login_div' class = 'login'>
 	<form name = 'frm_login' method = 'post' action = 'jsp/login_result.jsp'>
-		<span>아이디</span>
-		<input type = 'text' name = 'mId' value = 'a001'/><br/>
-		<span>비밀번호</span>
-		<input type = 'password' name = 'pwd' value = '1111'/><br/>
+		<div class = 'login_id_text'>
+			<span>아이디</span>
+			<input type = 'text' name = 'mId' value = 'a001'/><br/>
+		</div>
+		<div class = 'login_pwd_text'>
+			<span>비밀번호</span>
+			<input type = 'password' name = 'pwd' value = '1111'/><br/>
+		</div>
+		<br/>
 		<input type = 'submit' value = '로그인'/>
 	</form>
 </div>

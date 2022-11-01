@@ -1,0 +1,12 @@
+@charset "UTF-8";
+#login_div{
+	border : 3px solid black;
+	text-align : center;
+	margin : 30px auto;
+	padding : 30px;
+}
+
+#login_div .login_id_text span{
+	margin-right : 16px;
+}
+

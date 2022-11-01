@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body id = 'login_result_body'>
 <%
 
 String mId = request.getParameter("mId");

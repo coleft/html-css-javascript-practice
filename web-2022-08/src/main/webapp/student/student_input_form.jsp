@@ -5,7 +5,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>student_input_form</title>
-		<link rel = 'stylesheet' href = '../css/student.css'>
+		<link rel = 'stylesheet' href = './css/student.css'>
 		<script src = '//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js'></script>
 	</head>
 	<body>
