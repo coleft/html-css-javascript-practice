@@ -8,14 +8,30 @@
 		<link rel = 'stylesheet' href = 'css/index.css'>
 	</head>
 	<body>
+<%
+String inc = "temp.html";
+if(request.getParameter("inc")!=null){
+	inc = request.getParameter("inc");
+}
+
+String sessionId = (String)session.getAttribute("sessionId");
+%>	
 		<main>
-			<div class = 'login'>로그인/로그아웃</div>
+			<div class = 'login'>
+			<%if(sessionId == null){ %>
+				<a href = 'index.jsp?inc=member/login.jsp' style="color:darkblue;">로그인</a>
+			<%}else{ %>
+				[<%=sessionId %>님 방가]
+				<a href = 'member/logout.jsp' style="color:darkblue;">로그아웃</a>			
+			<%} %>
+			
+			</div>
 			<header>
-				<img src = "images/서울.PNG" id='logo'/>							
+				<img src = "images/서울.gif" id='logo'/>				
 				<nav>
-					<a href='student/student_list.jsp'>학생관리</a>
-					<a href='javascript/score_crud.html'>성적관리</a>
-					<a href='javascript/member_control.html'>회원관리</a>
+					<a href='index.jsp?inc=student/student_list.jsp'>학생관리</a>
+					<a href='index.jsp?inc=javascript/score_crud.html'>성적관리</a>
+					<a href='index.jsp?inc=javascript/member_control.html'>회원관리</a>
 					<a href='#'>제품관리</a>
 					<a href='#'>생산관리</a>
 					<a href='#'>방명록</a>
@@ -23,7 +39,7 @@
 				</nav>
 			</header>
 			<div class = 'content'>
-				메인 컨텐츠
+				<jsp:include page = "<%=inc%>"/>
 			</div>
 			<footer>
 				대한민국
@@ -31,3 +47,4 @@
 		</main>
 	</body>
 </html>
+ 

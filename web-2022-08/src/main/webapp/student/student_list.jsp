@@ -5,7 +5,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>student_list</title>
-		<link rel = 'stylesheet' href = '../css/student.css'>
+		<link rel = 'stylesheet' href = 'css/student.css'>
 	</head>
 	<body>
 		<h1>학생정보 조회</h1>		
