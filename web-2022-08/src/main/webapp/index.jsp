@@ -8,6 +8,8 @@
 		<link rel = 'stylesheet' href = 'css/index.css'>
 	</head>
 	<body>
+	
+
 <%
 String inc = "temp.html";
 if(request.getParameter("inc")!=null){
@@ -29,7 +31,7 @@ String sessionId = (String)session.getAttribute("sessionId");
 			<header>
 				<img src = "images/서울.gif" id='logo'/>
 				<nav>
-					<a href='index.jsp?inc=student/student_input_form.jsp'>학생관리</a>
+					<a href='index.jsp?inc=student/student_list.jsp'>학생관리</a>
 					<a href='index.jsp?inc=javascript/score_crud.html'>성적관리</a>
 					<a href='index.jsp?inc=javascript/member_control.html'>회원관리</a>
 					<a href='#'>제품관리</a>
@@ -41,6 +43,7 @@ String sessionId = (String)session.getAttribute("sessionId");
 			<div class = 'content'>
 				<jsp:include page = "<%=inc%>"/>
 			</div>
+			
 			<footer>
 				대한민국
 			</footer>

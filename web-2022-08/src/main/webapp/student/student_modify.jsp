@@ -5,7 +5,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>student_modify</title>
-		<link rel = 'stylesheet' href = '../css/student.css'>
+		<link rel = 'stylesheet' href = '../css/student_modify.css'>
 		<script src = '//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js'></script>		
 	</head>
 	<body>
@@ -74,6 +74,7 @@
 				}).open();
 			}
 			
+			/*
 			//아이디 영숫자 + 연락처 패턴 + 이메일 패턴 + 암호와 암호확인 값 동일 체크
 			btn_save.onclick = function(){
 				let reg_id = /^[a-zA-Z0-9]+$/;
@@ -108,7 +109,7 @@
 				}
 				
 			}
-			
+			*/
 			
 			
 			function msg(reg, str){
