@@ -15,5 +15,5 @@ public class Page {
 	}
 	public void setNowPage(int nowPage) {
 		this.nowPage = nowPage;
-	}	
+	}
 }
