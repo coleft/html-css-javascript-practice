@@ -6,6 +6,7 @@
 		<meta charset="UTF-8">
 		<title>웹 프로젝트</title>
 		<link rel = 'stylesheet' href = 'css/index.css'>
+		<script defer src='js/student.js'></script>
 	</head>
 	<body>
 	

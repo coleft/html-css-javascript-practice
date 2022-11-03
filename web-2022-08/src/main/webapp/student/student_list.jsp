@@ -26,6 +26,7 @@
 				<input type = "search" name = 'findStr' value = "<%=pageVo.getFindStr()%>"/>
 				<input type = "button" value = "조회" name = 'btnSelect'/>
 				<input type='text' name = 'nowPage' value = "<%=pageVo.getNowPage()%>"/>
+				<!-- <input type = 'text' name = 'id'/> -->
 			</div>
 		</form>
 		<div id = "r1">
@@ -41,7 +42,7 @@
 		<% for(int i=0; i<list.size(); i++){
 			StudentVo v = list.get(i);
 		%>
-         <div class='item'>
+         <div class='item' onclick = "view('<%=v.getId()%>')">
             <span class='c1'><%=i+1 %></span>
             <span class='c2'><%=v.getId() %></span>
             <span class='c3'><%=v.getName() %></span>
@@ -56,9 +57,20 @@
 		
 		<div id = "bottom_line">
 		</div>
-		<div class = "pageNumber">
-			<input type = "button" style="cursor: pointer;" 
-			value = "1">
+		<div class = "pageNumber"><!-- page 이동 버튼 -->
+			<%if(pageVo.getStartPage()>1){ %>
+				<input type = "button" style="cursor: pointer;" value = "처음" onclick = 'movePage(1)'/>
+				<input type = "button" style="cursor: pointer;" value = "이전" onclick = 'movePage(<%=pageVo.getStartPage()-1%>)'/>
+			<%} %>
+			
+			<%for(int i = pageVo.getStartPage(); i<=pageVo.getEndPage(); i++ ){ %>
+				<input type = "button" style="cursor: pointer;" value = "<%=i%>" onclick = 'movePage(<%=i%>)'/>
+			<%} %>
+			
+			<%if(pageVo.getTotPage()>pageVo.getEndPage()){ %>
+				<input type = "button" style="cursor: pointer;" value = "다음" onclick = 'movePage(<%=pageVo.getEndPage()+1%>)'/>
+				<input type = "button" style="cursor: pointer;" value = "끝으로" onclick = 'movePage(<%=pageVo.getTotPage()%>)'/>
+			<%} %>
 		</div>						
 	</body>
 </html>
