@@ -86,9 +86,7 @@
 			</div>
 			<input type = 'text' name = 'findStr' value = '<%=pageVo.getFindStr() %>'/>
 			<input type = 'text' name = 'nowPage' value = '<%=pageVo.getNowPage() %>'/>
-		</form>
-		
-			
+		</form>	
 		
 		<script>
 			checkGender('<%=vo.getGender()%>');
@@ -96,10 +94,7 @@
 				var frm = document.frm_student;
 				if(g=='m') frm.gender[0].checked=true;
 				else frm.gender[1].checked=true;
-			}		
-			
-			
-			
+			}			
 			
 			let code1 = document.querySelector('#code1');
 			let code2 = document.querySelector('#code2');

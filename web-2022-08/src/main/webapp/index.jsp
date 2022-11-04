@@ -9,7 +9,7 @@
 		<script defer src='js/student.js'></script>
 	</head>
 	<body>
-	
+
 
 <%
 String inc = "temp.html";
@@ -19,6 +19,7 @@ if(request.getParameter("inc")!=null){
 
 String sessionId = (String)session.getAttribute("sessionId");
 %>
+
 		<main class = 'realmain'>
 			<div class = 'login'>
 			<%if(sessionId == null){ %>
