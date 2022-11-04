@@ -34,6 +34,10 @@ After : ${requestScope.phone }...
 <h2>c:if</h2>
 <c:set var='n1' value = '100'/>
 <c:set var='n2' value = '200'/>
+<ul>
+	<li>n1 : <c:out value = '${n1 }'/></li>
+	<li>n2 : <c:out value = '${n2 }'/></li>
+</ul>
 <c:if test = "${n1<n2}">n1이 n2보다 작음</c:if>
 
 </body>
