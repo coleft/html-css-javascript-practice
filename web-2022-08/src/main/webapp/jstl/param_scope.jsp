@@ -32,7 +32,7 @@
 	<hr/>
 	<div>
 		<ul>
-			<li>Name : ${vo.name} </li>
+			<li>Name : ${vo.name} </li>			<!-- 필드명 아니라 name, address, phone은 게터입니다. -->
 			<li>Address : ${vo.address} </li>
 			<li>Phone : ${vo.phone} </li>
 		</ul>

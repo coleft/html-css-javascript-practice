@@ -10,7 +10,6 @@
 	</head>
 	<body>
 
-
 <%
 String inc = "temp.html";
 if(request.getParameter("inc")!=null){
@@ -31,9 +30,9 @@ String sessionId = (String)session.getAttribute("sessionId");
 			
 			</div>
 			<header>
-				<img src = "images/서울.gif" id='logo'/>
+				<img src = "images/서울.gif" id='logo' style="cursor:pointer;" onclick="location.href='index.jsp'"/>
 				<nav>
-					<a href='index.jsp?inc=student/student_list.jsp'>학생관리</a>
+					<a href='student.do'>학생관리</a>
 					<a href='index.jsp?inc=javascript/score_crud.html'>성적관리</a>
 					<a href='index.jsp?inc=javascript/member_control.html'>회원관리</a>
 					<a href='#'>제품관리</a>

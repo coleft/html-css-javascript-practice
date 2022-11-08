@@ -13,27 +13,27 @@
 
 <jsp:useBean id = "sVo" class = 'student.StudentVo' />
 <jsp:setProperty property="*" name = "sVo"/>
-	
+
 <form name = 'frm' method = 'post'>
 	<input type = 'text' name = 'findStr' value = "<%=pageVo.getFindStr()%>"/>
 	<input type = 'text' name = 'nowPage' value = "<%=pageVo.getNowPage()%>"/>
 </form>
-	
+
 <%
 StudentDao dao = new StudentDao();
-boolean b = dao.delete(sVo);
+boolean b = dao.modify(sVo);
 %>
 
 <%if( !b ){ %>
 	<script>
 		alert('자료 저장 중 오류 발생');		
-	</script>
+	</script>	
 <% } %> 
 
 	<script>
 		var frm = document.frm;
 		frm.action = "index.jsp?inc=student/student_list.jsp";
-		frm.submit();
+		frm.submit();		
 	</script>
 
 </body>

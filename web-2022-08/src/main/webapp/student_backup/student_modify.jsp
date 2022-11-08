@@ -11,7 +11,7 @@
 		<script src = '//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js'></script>		
 	</head>
 	<body>
-	<%-- 
+	
 	<jsp:useBean id = "pageVo" class = "student.Page"></jsp:useBean>
 	<jsp:setProperty property = "*" name = "pageVo"/>
 	
@@ -24,17 +24,17 @@
 		StudentVo vo = dao.view(sVo.getId());
 		
 	%>
-	 --%>
+	
 		<h2>학생정보 수정</h2>
 		<form id = "student_modify.jsp" name = 'frm_student' method = 'post'>
 			<div>
 				<span class = 'cc1'>아이디</span>
-				<span class = 'cc2'><input type = "text" size = '18' id='id1' name = 'id' value = '${vo.id }' readOnly/></span>
+				<span class = 'cc2'><input type = "text" size = '18' id='id1' name = 'id' value = '<%=vo.getId()%>' readOnly/></span>
 			</div>
 			<div>
 				<span class = 'cc1'>성명</span>
 				<span class = 'cc2'>
-				<input type = "text" size = '14' name = 'name' value = '${vo.name }'>
+				<input type = "text" size = '14' name = 'name' value = '<%=vo.getName() %>'>
 				</span>
 			</div>	
 			<div>
@@ -50,31 +50,31 @@
 				<span class = 'cc1'>성별</span>
 				<span class = 'cc2'>
 					<label>
-					<input type = "radio" name = "gender" value = "m" ${ (vo.gender eq 'm')? 'checked' : '' }/>
+					<input type = "radio" name = "gender" value = "m" />
 					남자</label>
 					<label>
-					<input type = "radio" name = "gender" value = "f" ${ (vo.gender eq 'f')? 'checked' : '' }/>
+					<input type = "radio" name = "gender" value = "f" />
 					여자</label>
 					</span>
 			</div>
 			<div>
 				<span class = 'cc1'>연락처</span>
 				<span class = 'cc2'>
-				<input type = "text" size = '14' id='phone1' name = 'phone' value='${vo.phone }'></span>
+				<input type = "text" size = '14' id='phone1' name = 'phone' value='<%=vo.getPhone()%>'></span>
 			</div>
 			<div>
 				<span class = 'cc1' id='code1'>우편번호</span>
 				<span class = 'cc2'>
-				<input type = "text" size = '10' id='code2' name = 'zipcode' value = '${vo.zipcode }'></span>
+				<input type = "text" size = '10' id='code2' name = 'zipcode' value = '<%=vo.getZipcode()%>'></span>
 				<input type = "button" value = "우편번호 검색" id='code3' name = 'findZipCode' />
 			</div>
 			<div>
 				<span class = 'cc1'>주소</span>
-				<span class = 'cc2'><input type = "text" size = '36' id='address1' name = 'address' value = '${vo.address }'></span>
+				<span class = 'cc2'><input type = "text" size = '36' id='address1' name = 'address' value = '<%=vo.getAddress()%>'></span>
 			</div>
 			<div>
 				<span class = 'cc1'>이메일</span>
-				<span class = 'cc2'><input type = "text" size = '18' id='email1' name = 'email' value = '${vo.email }'></span>
+				<span class = 'cc2'><input type = "text" size = '18' id='email1' name = 'email' value = '<%=vo.getEmail()%>'></span>
 			</div>
 			<br/>	
 			<div>
@@ -84,17 +84,17 @@
 					  <input type = "button" value = "삭제" id = 'btnDelete'>
 					  <input type = "button" value = "목록" id = 'btnSelect'></span>
 			</div>
-			<input type = 'text' name = 'findStr' value = '${pageVo.findStr }'/>
-			<input type = 'text' name = 'nowPage' value = '${pageVo.nowPage }'/>
+			<input type = 'text' name = 'findStr' value = '<%=pageVo.getFindStr() %>'/>
+			<input type = 'text' name = 'nowPage' value = '<%=pageVo.getNowPage() %>'/>
 		</form>	
 		
 		<script>
-		<%-- 	checkGender('<%=vo.getGender()%>');
+			checkGender('<%=vo.getGender()%>');
 			function checkGender(g){
 				var frm = document.frm_student;
 				if(g=='m') frm.gender[0].checked=true;
 				else frm.gender[1].checked=true;
-			} --%>			
+			}			
 			
 			let code1 = document.querySelector('#code1');
 			let code2 = document.querySelector('#code2');

@@ -70,7 +70,7 @@
 				<span class = 'cc1'>이메일</span>
 				<span class = 'cc2'><input type = "email" size = '18' id='email1' name = 'email'></span>
 			</div>
-			<br/>
+			<br/>		
 			<div>
 				<span class = 'cc1'></span>
 				<span class = 'cc2'>
@@ -78,8 +78,8 @@
 				<input type = "button" value = "취소" name = 'btnCancel'/>
 				</span>
 			</div>
-		<input type='text' name='findStr' value='${pageVo.findStr }'/>
-        <input type='text' name='nowPage' value='${pageVo.nowPage }'/>
+		<input type='text' name='findStr' value='<%=pageVo.getFindStr()%>'/>
+        <input type='text' name='nowPage' value='<%=pageVo.getNowPage()%>'/>
 		</form>
 	</body>
 </html>

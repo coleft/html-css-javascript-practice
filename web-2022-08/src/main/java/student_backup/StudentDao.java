@@ -1,4 +1,4 @@
-package student;
+package student_backup;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,8 +10,6 @@ import jdbc.DBConn;
 
 public class StudentDao {
 	Connection conn;
-	PreparedStatement ps = null;
-	ResultSet rs = null;
 	
 	public StudentDao() {
 		try {
@@ -21,28 +19,13 @@ public class StudentDao {
 		}
 	}
 	
-	public void close() {		// rs, ps, conn
-		try {
-			if(rs != null) rs.close();
-			if(ps != null) ps.close();
-			if(conn != null) conn.close();
-			rs=null;
-			ps=null;
-			conn=null;					
-		}catch(Exception ex) {
-			ex.printStackTrace();
-		}
-	}
-		
 	public boolean insert(StudentVo vo) {
-		if(conn == null) conn = new DBConn("mydb").getConn();
-		
 		boolean b = false;
 		String sql = "insert into student(id, name, phone, pwd, address, gender, zipcode, address2, email)"
 					+"values(?,?,?,?,?,?,?,?,?)";
 		try {
 			conn.setAutoCommit(false);
-			ps = conn.prepareStatement(sql);
+			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, vo.getId());
 			ps.setString(2, vo.getName());
 			ps.setString(3, vo.getPhone());
@@ -57,19 +40,23 @@ public class StudentDao {
 			if(cnt>0) {
 				conn.commit();
 				b=true;
-			}else {
-				conn.rollback();
 			}
+						
+			ps.close();
+			conn.close();
+			
 		}catch(Exception ex) {
 			ex.printStackTrace();
-		}		
+		}
+		
 		return b;
 	}
 	
 	public List<StudentVo> select(Page pageVo){
-		if(conn == null) conn = new DBConn("mydb").getConn();
 		List<StudentVo> list = new ArrayList<StudentVo>();
 		String sql = "";
+		PreparedStatement ps = null;
+		ResultSet rs = null;
 		
 		//검색된 전체 건수
 		try {
@@ -128,23 +115,25 @@ public class StudentDao {
 				vo.setGender(rs.getString("gender"));
 				vo.setEmail(rs.getString("email"));
 				list.add(vo);
-			}		
+			}
+			
+			ps.close();
+			conn.close();
+			
 		}catch(Exception ex) {
 			ex.printStackTrace();
 		}
-		close();
 		
 		return list;
 	}
 	
 	public StudentVo view(String id) {
-		if(conn == null) conn = new DBConn("mydb").getConn();
 		StudentVo vo = new StudentVo();
 		String sql = "select * from student where id = ?";
 		try {
-			ps = conn.prepareStatement(sql);
+			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, id);
-			rs = ps.executeQuery();
+			ResultSet rs = ps.executeQuery();
 			if(rs.next()) {
 				vo.setId(rs.getString("id"));
 				vo.setName(rs.getString("name"));
@@ -156,15 +145,16 @@ public class StudentDao {
 				vo.setEmail(rs.getString("email"));
 			}
 			
+			ps.close();
+			conn.close();
+			
 		}catch(Exception ex) {
 			ex.printStackTrace();
-		}
-		close();
+		}		
 		return vo;
 	}
 	
 	public boolean modify(StudentVo vo) {
-		if(conn == null) conn = new DBConn("mydb").getConn();
 		boolean b = false;
 		String sql = " update student set name = ?, gender = ?, phone = ?, "
 				+ " zipcode = ?, address = ?, address2 = ?, email = ? "
@@ -172,7 +162,7 @@ public class StudentDao {
 		
 		try {
 			conn.setAutoCommit(false);
-			ps = conn.prepareStatement(sql);
+			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, vo.getName());
 			ps.setString(2, vo.getGender());
 			ps.setString(3, vo.getPhone());
@@ -184,7 +174,7 @@ public class StudentDao {
 			ps.setString(9, vo.getPwd());
 			
 			int cnt = ps.executeUpdate();
-			System.out.println(cnt);
+			
 			if(cnt>0) {
 				b = true;
 				conn.commit();
@@ -192,35 +182,42 @@ public class StudentDao {
 				conn.rollback();
 			}
 			
-		
+			ps.close();
+			conn.close();
+			
 		}catch(Exception ex) {
 			ex.printStackTrace();
-		}		
+		}
+		
 		return b;
 	}
 	
 	public boolean delete(StudentVo vo) {
-		if(conn == null) conn = new DBConn("mydb").getConn();
 		boolean b = false;
 		String sql = "delete from student where id = ? and pwd = ? ";
 		try {
 			conn.setAutoCommit(false);
-			ps = conn.prepareStatement(sql);
+			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1,  vo.getId());
 			ps.setString(2,  vo.getPwd());
 			
 			int cnt = ps.executeUpdate();
-			
 			if(cnt>0) {
 				b = true;
 				conn.commit();
 			}else {
 				conn.rollback();
 			}
-		
+			
+			ps.close();
+			conn.close();
+			
 		}catch(Exception ex) {
 			ex.printStackTrace();
 		}
-		return b;		
-	}	
+		return b;
+		
+	}
+	
+	
 }
