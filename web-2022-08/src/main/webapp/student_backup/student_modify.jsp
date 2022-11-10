@@ -89,7 +89,8 @@
 		</form>	
 		
 		<script>
-			checkGender('<%=vo.getGender()%>');
+			<%-- checkGender('<%=vo.getGender()%>'); --%>
+			checkGender('${vo.gender}');
 			function checkGender(g){
 				var frm = document.frm_student;
 				if(g=='m') frm.gender[0].checked=true;
