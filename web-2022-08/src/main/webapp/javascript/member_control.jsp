@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -30,11 +32,7 @@
 	<body class = 'member_control_body'>
 		<main class = 'member_control_main'>
 			<div class = 'main_title'>
-				회원 정보 CRUD
-				<!-- (모든 프로그램의 기본 
-				-> C:Create(생성,추가) R:Read(조회, 읽기) 
-				   U:Update(수정) D:Delet(삭제)) -->
-				<!-- 파일이든 네트워크든 이것만 잘 하면 됨 -->
+				회원관리 CRUD
 			</div>
 			<form name = 'frm_member'>
 				<div id = 'profile_photo'>
@@ -42,15 +40,15 @@
 					<img src='../test/img/19.PNG' id='photo'/>
 				</div>
 				<div id = 'right_profile'>
-					<span>아이디</span>
+					<span>아이디</span>
 					<input type='text' name='id' value='a001'><br/>
-					<span>성명</span>
+					<span>성명</span>
 					<input type='text' name='name' value='hong'/><br/>
-					<span>성별</span>
-					<label><input type='radio' name='gender' value='m'>남자</label>
+					<span>성별</span>
+					<label><input type='radio' name='gender' value='m'>남자</label>
 					<label><input type='radio' name='gender' value='f'>여자</label>
 					<br/>
-					<span>연락처</span>
+					<span>연락처</span>
 					<input type='text' name='phone' value='010-1111-1234'/><br/>
 				</div>
 				<hr/>
@@ -61,15 +59,15 @@
 			</form>
 			<div id = 'list'>
 				<div id = 'title'>
-					<span class='id'>아이디</span>
-					<span class='name'>성명</span>
-					<span class='gender'>성별</span>
-					<span class='phone'>연락처</span>
+					<span class='id'>a001</span>
+					<span class='name'>hong</span>
+					<span class='gender'>m</span>
+					<span class='phone'>010-1111-1234</span>
 				</div>
 				<div id = 'items'>
 					<div class='item'>						
 					</div>
-				</div>				
+				</div>
 			</div>			
 		</main>
 		<output id = 'message_output'></output>
@@ -78,23 +76,8 @@
 		let photo = document.querySelector('#photo');
 		
 		photo.onclick = function(){
-			btnFile.click();	//onclick:~했을 때, click:그냥 이벤트 발생함			
+			btnFile.click();
 		}
-		/*
-		function preview(ev){
-			let event = ev || window.event;
-			let file = event.srcElement.files[0];	
-			
-			//FileReader 생성
-			let reader = new FileReader();
-			reader.onload=function(fev){				
-				let img = new Image();
-				img.src = reader.result;
-				photo.src = img.src;
-			}
-			reader.readAsDataURL(file);
-		}
-		*/
 		
 		btnFile.onchange = function(ev){
 			let file = ev.srcElement.files[0];
@@ -105,9 +88,7 @@
 				tempImg.src = this.result;
 				photo.src = tempImg.src;
 			}
-		}
-		
-		
+		}		
 	</script>
 	</body>
 </html>
