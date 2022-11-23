@@ -8,7 +8,10 @@ public class MemberVo {
 	String phone = "";
 	String oriFile = "";
 	String sysFile = "";
+	String delFile = "";
 	
+	public String getDelFile() { return delFile; }
+	public void setDelFile(String delFile) { this.delFile = delFile; }
 	public String getId() { return id;	}
 	public void setId(String id) { this.id = id;	}
 	public String getName() { return name;	}

@@ -22,7 +22,7 @@ import jakarta.servlet.http.Part;
 @WebServlet(urlPatterns = "/upload.do")
 public class FileUploadServlet extends HttpServlet{
 	
-	String path = "C:\\Users\\7E\\git\\html-css-javascript-practice\\web-2022-08\\src\\main\\webapp\\upload\\";	
+	public static String path = "C:\\Users\\7E\\git\\html-css-javascript-practice\\web-2022-08\\src\\main\\webapp\\upload\\";	
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

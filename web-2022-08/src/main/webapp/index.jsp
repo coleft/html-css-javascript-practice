@@ -44,8 +44,7 @@ String sessionId = (String)session.getAttribute("sessionId");
 			</header>
 			<div class = 'content'>
 				<jsp:include page = "<%=inc%>"/>
-			</div>
-			
+			</div>			
 			<footer>
 				대한민국
 			</footer>

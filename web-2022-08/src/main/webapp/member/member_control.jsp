@@ -36,8 +36,9 @@
 			</div>
 			<form name = 'frm_member' enctype = 'multipart/form-data' method = 'post' action = 'memberUpload.do'>
 				<div id = 'profile_photo'>
-					<input type='file' name = 'sysFile' id='photo_file' />
-					<img src='./test/img/19.PNG' id='photo'/>
+					<img src='./test/img/19.PNG' class = 'img' id='photo'/>
+					<input type='file' name = 'photo'  id='photo_file' />
+					<input type = 'hidden' name = 'delFile' />
 				</div>
 				<div id = 'right_profile'>
 					<span>아이디</span>
