@@ -10,6 +10,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jdbc.FindPwd;
 
 @WebServlet(urlPatterns = "/student.do")	// 그냥 메인에서 시작되도록 경로 수정했다.
 public class StudentServlet extends HttpServlet{
@@ -82,8 +83,6 @@ public class StudentServlet extends HttpServlet{
 			break;
 		}
 	}
-	
-	
 	
 	public void select(Page pageVo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		if(dao==null) dao = new StudentDao();

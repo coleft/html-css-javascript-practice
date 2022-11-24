@@ -49,7 +49,7 @@ public class SendNaverServlet extends HttpServlet{
 
     @Override
     protected PasswordAuthentication getPasswordAuthentication() {
-    return new PasswordAuthentication("su0328bi@naver.com","@subi1925@");
+    return new PasswordAuthentication("statictemp9210@naver.com","lhs!!@!1101");
     }
    });
    

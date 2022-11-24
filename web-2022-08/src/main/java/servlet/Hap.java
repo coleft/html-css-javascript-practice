@@ -12,6 +12,8 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = "/servlet/hap.do")
 public class Hap extends HttpServlet{
 
+	
+	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String btn = req.getParameter("btn");		

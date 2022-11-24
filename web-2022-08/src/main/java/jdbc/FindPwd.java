@@ -6,16 +6,15 @@ import java.sql.ResultSet;
 
 public class FindPwd {
 	
-	DBConn Connection;
-	private String pwdR;
-	
-	
 	
 	
 	public String findPwd(String mId, String email) {
-		
+		String pwdR = "";
 		try {
-			Connection conn = new DBConn("mydb").getConn();
+			
+			Connection conn;
+			
+			conn = new DBConn("mydb").getConn();
 			
 			
 			String sql = "select pwd from student where id = ? and email = ? ";
