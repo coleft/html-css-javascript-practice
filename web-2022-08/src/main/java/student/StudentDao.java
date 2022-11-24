@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import crypto.AES;
 import jdbc.DBConn;
 
 public class StudentDao {
@@ -36,6 +37,13 @@ public class StudentDao {
 		
 	public boolean insert(StudentVo vo) {
 		if(conn == null) conn = new DBConn("mydb").getConn();
+		
+		
+		AES aes = new AES();
+		String msg = vo.getPwd();
+		String enc = aes.encrypt(msg);
+		vo.setPwd(enc);
+		
 		
 		boolean b = false;
 		String sql = "insert into student(id, name, phone, pwd, address, gender, zipcode, address2, email)"
@@ -165,6 +173,12 @@ public class StudentDao {
 	
 	public boolean modify(StudentVo vo) {
 		if(conn == null) conn = new DBConn("mydb").getConn();
+		
+		AES aes = new AES();
+		String msg = vo.getPwd();
+		String enc = aes.encrypt(msg);
+		vo.setPwd(enc);
+		
 		boolean b = false;
 		String sql = " update student set name = ?, gender = ?, phone = ?, "
 				+ " zipcode = ?, address = ?, address2 = ?, email = ? "
@@ -201,6 +215,12 @@ public class StudentDao {
 	
 	public boolean delete(StudentVo vo) {
 		if(conn == null) conn = new DBConn("mydb").getConn();
+		
+		AES aes = new AES();
+		String msg = vo.getPwd();
+		String enc = aes.encrypt(msg);
+		vo.setPwd(enc);
+		
 		boolean b = false;
 		String sql = "delete from student where id = ? and pwd = ? ";
 		try {

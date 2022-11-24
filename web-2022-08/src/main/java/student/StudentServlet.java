@@ -83,6 +83,8 @@ public class StudentServlet extends HttpServlet{
 		}
 	}
 	
+	
+	
 	public void select(Page pageVo, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		if(dao==null) dao = new StudentDao();
 		List<StudentVo> list = dao.select(pageVo);

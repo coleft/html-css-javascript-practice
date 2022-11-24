@@ -9,7 +9,6 @@
 </head>
 <body id = 'login_result_body'>
 <%
-
 String mId = request.getParameter("mId");
 String pwd = request.getParameter("pwd");
 Login l = new Login();

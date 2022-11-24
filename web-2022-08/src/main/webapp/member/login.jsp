@@ -20,7 +20,9 @@
 		</div>
 		<br/>
 		<input type = 'submit' value = '로그인'/>
+		<input type = 'button' name = 'btnFindPwd' value = '암호찾기' onclick = "location.href='index.jsp?inc=jsp/findPwd.jsp'"/>
 	</form>
 </div>
+
 </body>
 </html>

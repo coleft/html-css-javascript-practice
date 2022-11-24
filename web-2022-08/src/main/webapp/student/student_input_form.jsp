@@ -11,6 +11,7 @@
 		<script src = '//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js'></script>
 	</head>
 	<body>
+	
 	<jsp:useBean id = "pageVo" class = "student.Page"/>
 	<jsp:setProperty property = "*" name = "pageVo"/>
 	
@@ -46,7 +47,8 @@
 			</div>
 			<div>
 				<span class = 'cc1'>암호 확인</span>
-				<span class = 'cc2'><input type = "password" size = '21' id='pw2' name = 'pwd2'></span>
+				<span class = 'cc2'>
+				<input type = "password" size = '21' id='pw2' name = 'pwd2'></span>
 			</div>
 			<div>
 				<span class = 'cc1'>연락처</span>

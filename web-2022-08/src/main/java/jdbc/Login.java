@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import crypto.AES;
+
 
 public class Login {
 	
@@ -13,12 +15,18 @@ public class Login {
 		boolean b = false;
 		try {
 			Connection conn = new DBConn("mydb").getConn();
-			String sql = "select * from member where id = ?";
+			
+			AES aes = new AES();
+			
+			String sql = "select * from student where id = ? and pwd = ? ";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, mId);
+			ps.setString(2, aes.encrypt(pwd));
 			ResultSet rs = ps.executeQuery();
 			if(rs.next()) {
-				b = true;
+				//if(mId.equals(rs.getString("id"))&&aes.encrypt(pwd).equals(rs.getString("pwd"))) {
+					b = true;
+				//}
 			}
 			ps.close();
 			conn.close();

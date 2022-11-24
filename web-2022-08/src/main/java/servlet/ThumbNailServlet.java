@@ -1,16 +1,19 @@
 package servlet;
 
+import java.awt.Graphics2D;	//Swing 따로 import함
+
 import java.awt.image.renderable.ParameterBlock;
+import java.io.File;
 import java.io.IOException;
 import java.util.Collection;
 
+import javax.imageio.ImageIO;
 import javax.media.jai.JAI;
 import javax.media.jai.RenderedOp;
 
 import java.awt.image.BufferedImage;
 
-
-
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
@@ -50,19 +53,31 @@ public class ThumbNailServlet extends HttpServlet{
 					//thumbnail
 					ParameterBlock pb = new ParameterBlock();
 					pb.add(uploadPath + uploadFile);
-					RenderedOp op = JAI.create("fileupload",  pb); //상수
+					RenderedOp op = JAI.create("fileload",  pb); //상수
 					
 					BufferedImage bi = op.getAsBufferedImage();//원본 이미지 버퍼
 					BufferedImage thumb = new BufferedImage(bi.getWidth()/3, bi.getHeight()/3, BufferedImage.TYPE_INT_ARGB);		
 					
+					Graphics2D g = thumb.createGraphics();
+					g.drawImage(bi, 0, 0, bi.getWidth()/3, bi.getHeight()/3, null);		
 					
-					
-					
-					
+					File file = new File(uploadPath + "thumb_" + uploadFile);
+					ImageIO.write(thumb, "png", file);
+					info.append("<li>thumb nail file : " + file.getName());
+					info.append("<hr/>");
 					
 				}
 			}
 		}
 		
+		req.setAttribute("info", info);
+		System.gc();//garbage collection : 파일 점유한 내용 모두 해제하기 위해 => 필수요건은 아님
+		RequestDispatcher rd = req.getRequestDispatcher("thumbnail/thumbnail_result.jsp");
+		rd.forward(req, resp);
+		
 	}
 }
+
+
+
+
