@@ -28,8 +28,7 @@ public class SendNaverServlet2 extends HttpServlet{
  
  @Override
  protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-   
-	 
+   	 
 	 String foundPwd = req.getAttribute("foundPwd").toString();
 	 String email = req.getAttribute("email").toString();
 	 AES aes = new AES();
@@ -41,8 +40,7 @@ public class SendNaverServlet2 extends HttpServlet{
   String receiver = email;
   String subject = "비밀번호입니다.";
   String content = foundPwd;
-  
-  
+    
   try{
    // 이메일과 관련된 자료를 캡슐화
    Properties prop = new Properties();
@@ -57,7 +55,7 @@ public class SendNaverServlet2 extends HttpServlet{
 
     @Override
     protected PasswordAuthentication getPasswordAuthentication() {
-    return new PasswordAuthentication("statictemp9210@naver.com","lhs!!@!1101");
+    return new PasswordAuthentication("statictemp9210@naver.com","");
     }
    });
    
