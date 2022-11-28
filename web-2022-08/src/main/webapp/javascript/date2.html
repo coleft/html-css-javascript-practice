@@ -15,16 +15,17 @@
 			<span>생일</span>
 			<input type='date' name='birth'/><br/>			
 		</form>
+
 		
 		<script>
-			let frm = document.frm;
-			
+			let frm = document.frm;			
 			//Date type -> date tag
-			frm.nal.valueAsDate = new Date(); //그냥 value 쓰면 안 들어온다.	
-			
+			frm.nal.valueAsDate = new Date(); //그냥 value 쓰면 안 들어온다.				
 			//String type -> date tag
 			let d = "2022-01-15";
 			frm.birth.valueAsDate = new Date(Date.parse(d)); //쓸 땐 Date 객체로 바꿔야한다.	
+			
+			
 		</script>
 	</body>
 </html>

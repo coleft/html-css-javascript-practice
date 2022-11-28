@@ -12,6 +12,45 @@
  var divJsp = document.querySelector('#jsp');
  var divJson = document.querySelector('#json');
  
+ var cnt = 0;
+ var btnInsert = document.querySelector('#btnInsert');
+ 
+ btnInsert.addEventListener('click', function(){
+	var appendZone = document.querySelector('#appendZone');
+	cnt++;
+	// 추가할 div를 생성
+	var div = document.createElement("div");   // 1)
+	div.style.backgroundColor = '#ddd';
+	div.style.padding = '5px';
+	div.style.marginBottom = '2px';
+	
+	var txt = document.createElement("input"); // 2)
+	txt.setAttribute("type", "text");
+	txt.setAttribute("value", "하이" + cnt);
+	div.appendChild(txt);
+	
+	var btn = document.createElement("input");
+	btn.setAttribute("type","button");
+	btn.setAttribute("value", "삭제"+cnt);	
+	div.appendChild(btn);
+	btn.addEventListener('click', function(ev){
+		var tag = ev.srcElement;
+		var parent = tag.parentNode;
+		appendZone.removeChild(parent);
+	})
+	
+	appendZone.appendChild(div);
+})
+ 
+ /* 삭제 버튼 ---------------------- */
+ var btnDelete = document.querySelector('#btnDelete');
+ btnDelete.addEventListener('click', function(){
+	var appendZone = document.querySelector('#appendZone');
+	appendZone.innerHTML = '';
+	cnt = 0;
+}) 
+ 
+ var btnAppend2 = document.querySelector('#btnAppend2');
  btnText.addEventListener('click', function(){
 	var xhr = new XMLHttpRequest();//1)객체 생성
 	xhr.open('get', 'data.txt'); //2) 객체 초기화
@@ -22,11 +61,9 @@
 		}
 	}
 	xhr.send();// 4) 서버에게 요청처리
-	
 })
  
  btnHtml.addEventListener('click', function(){
-
 	var xhr = new XMLHttpRequest();
 	xhr.open('get', 'data.html');
 	xhr.onreadystatechange = function(){
@@ -35,11 +72,9 @@
 		}
 	}
 	xhr.send();
-	
 })
  
  btnJsp.addEventListener('click', function(){
-	
 	var xhr = new XMLHttpRequest();
 	xhr.open('get', 'data.jsp?dan=5');
 	xhr.onreadystatechange = function(){
@@ -51,7 +86,6 @@
 })
  
  btnJson.addEventListener('click', function(){
-	
 	var xhr = new XMLHttpRequest();
 	xhr.open('get', 'data_json.jsp');
 	xhr.onreadystatechange = function(){
@@ -90,8 +124,7 @@ std = function(){
 						 + "	<span>" + obj.phone + "</span>"
 						 + "	<span>" + obj.address + "</span>"
 						 + "</div>";
-				}
-				
+				}				
 				html += "</div>";
 				divList.innerHTML = html;
 			}
@@ -161,6 +194,47 @@ btnEmployee.addEventListener('click', function(){
 	}
 	xhr.send();
 })
+
+var theater = document.querySelector("#theater");
+var movie = document.querySelector("#movie");
+var city = document.querySelector("#city");
+
+city.addEventListener("click", function(){
+	var v = city.value;
+	var xhr = new XMLHttpRequest();
+	xhr.open('get', 'theater.jsp?city=' + v);
+	xhr.send();
+	xhr.onreadystatechange = function(){
+		if(xhr.status==200&&xhr.readyState==4){
+			var data = JSON.parse(xhr.responseText);
+			theater.length = 0;
+			for(d of data){
+				var op = new Option(d,d); //첫번째가 text
+				theater.appendChild(op);
+			}
+		}
+	}
+})
+
+theater.addEventListener('click', function(){
+	var v = theater.value;
+	var xhr = new XMLHttpRequest();
+	xhr.open('get', 'movie.jsp?theater=' + v);
+	xhr.send();
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState==4){	//전송이 불안전하면 수신받은 데이터 정상이 아닐거야
+			movie.length=0;
+			var data = JSON.parse(xhr.responseText);
+			console.log(data);
+			for(d of data){
+				var op = new Option(d,d);
+				movie.appendChild(op);
+			}
+		}
+	}
+})
+
+
 
 
 
