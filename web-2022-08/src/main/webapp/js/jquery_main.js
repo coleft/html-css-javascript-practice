@@ -36,6 +36,25 @@ $('#buttons').css({
 	'float' : 'right'
 })
 
+
+$('#btnGuGuDan').on('click',function(){
+	$('div#content').load('gugudan.jsp')
+})
+
+$('#btnGet').on('click', function(){
+	$('#content').load('get.jsp');
+})
+
+$('nav>#btnPost').on('click', function(){
+	$('#content').load('post.jsp');
+})
+
+$('nav>#cusInfo').on('click', function(){
+	$('#content').load('cusInfo.jsp');
+})
+
+
+
 /*
 var btnLoad = document.querySelector('#btnLoad');
 var content = document.querySelector('#content');
@@ -50,13 +69,3 @@ btnLoad.addEventListener('click', function(){
 	xhr.send();
 })
 */
-
-$('#btnGuGuDan').on('click',function(){
-	$('div#content').load('gugudan.jsp')
-})
-
-
-
-
-
-
