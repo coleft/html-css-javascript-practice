@@ -56,8 +56,7 @@ public class FileUploadServlet extends HttpServlet{
 		req.setAttribute("info", info.toString());
 		
 		RequestDispatcher rd = req.getRequestDispatcher("jsp/file_upload_result.jsp");
-		rd.forward(req,  resp);
-		
+		rd.forward(req,  resp);		
 	}
 	
 }

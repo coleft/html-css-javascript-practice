@@ -53,6 +53,45 @@ $('nav>#cusInfo').on('click', function(){
 	$('#content').load('cusInfo.jsp');
 })
 
+$('nav>#btnAjax').on('click', function(){
+	$('#content').load('ajax.jsp');
+})
+
+$('nav>#btnSerialize').on('click', function(){
+	$('#content').load('serialize.jsp');
+})
+
+$('nav>#btnMultipart').on('click', function(){
+	$('#content').load('multipart_form.jsp');
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*

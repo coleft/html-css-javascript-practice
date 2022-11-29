@@ -13,14 +13,13 @@
 <div id = 'result'></div>
 <script>
 $(document).ready(function(){
-	$('#btn').on('click', function(){
-		
+	$('#btn').on('click', function(){		
 		$.ajax({
 			'type' : 'POST',
-			'url' : 'load_test.jsp111',
+			'url' : 'load_test.jsp',
 			'dataType' : 'html',
 			'success' : function(receiveData, status){
-				$('#result').text(receiveData);	//append, text, html 등등
+				$('#result').append(receiveData);	//append, text, html 등등
 				
 			},
 			'error' : function(xhr, status, error){

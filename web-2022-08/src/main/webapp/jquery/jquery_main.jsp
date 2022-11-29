@@ -22,6 +22,9 @@ crossorigin="anonymous"></script> --><!-- integrity나 crossorigin은 지워도 
 		<input type = 'button' value = 'GET' id = 'btnGet'/>
 		<input type = 'button' value = 'POST' id = 'btnPost'/>
 		<input type = 'button' value = '고객정보' id = 'cusInfo'/>
+		<input type = 'button' value = 'ajax' id = 'btnAjax'/>
+		<input type = 'button' value = 'Serialize' id = 'btnSerialize'/>
+		<input type = 'button' value = 'Multipart' id = 'btnMultipart'/>
 	</nav>
 	</header>
 	<div id = 'content'>Le' Go!</div>
