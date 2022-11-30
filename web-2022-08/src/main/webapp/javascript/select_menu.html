@@ -147,11 +147,13 @@
 				frm.region.options.add(op);
 			}
 			
-			//메뉴 설정 및 해당 지역의 메뉴를 menu에 추가
-			frm.region.onchange = function(){
-				let k = frm.region.value;
-				let menu = data[k];
-				for(k of menu){
+			//메뉴 설정 및 해당 지역의 메뉴를 menu에 추가	
+			
+			frm.region.onchange = function(){				
+				let k = frm.region.value;				
+				let menu = data[k];	
+				frm.menu.length = 0;
+				for(k of menu){							
 					let op = new Option(k, k); //text, value
 					frm.menu.options.add(op);
 				}

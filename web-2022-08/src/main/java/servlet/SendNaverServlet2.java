@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Date;
 import java.util.Properties;
 
@@ -41,6 +42,8 @@ public class SendNaverServlet2 extends HttpServlet{
   String subject = "비밀번호입니다.";
   String content = foundPwd;
     
+  String msg = "";
+  
   try{
    // 이메일과 관련된 자료를 캡슐화
    Properties prop = new Properties();
@@ -69,12 +72,18 @@ public class SendNaverServlet2 extends HttpServlet{
    
    // 메일 전송
    Transport.send(message);
-
+   msg = receiver + "님에게 메일이 정상적으로 전송됨.";
    
   }catch(Exception ex){
-
-   ex.printStackTrace();
+	 msg = "메일 전송 중 오류 발생";
+   ex.printStackTrace(); 
   }
-  resp.sendRedirect("index.jsp?inc=member/login.jsp");   
+  
+  	PrintWriter out = resp.getWriter();
+	out.print(msg);
+  
+  /*resp.sendRedirect("index.jsp?inc=member/login.jsp");*/   
+  
+  	
  }
 }

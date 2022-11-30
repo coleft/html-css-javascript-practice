@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration><!-- 구성 -->
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/><!-- 커밋과 롤백을 간단하게 처리 -->
+      <dataSource type="POOLED"><!-- DataSource 에 풀링이 적용된 JDBC 커넥션을 사용한다. -->
+        <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/mydb"/>
+        <property name="username" value="hong"/>
+        <property name="password" value="1111"/>
+      </dataSource>
+    </environment>
+  </environments>
+  <mappers>
+     <mapper resource="mybatis/member.xml"/>     
+  </mappers>
+</configuration>
