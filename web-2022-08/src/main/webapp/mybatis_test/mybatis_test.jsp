@@ -15,16 +15,17 @@
 <h2>mybatis test</h2>
 <%
 
+
 JSONArray array = new JSONArray();
 SqlSession sqlSession = MyFactory.getFactory().openSession(); //멤버요소 전부 가져옴
-List<MemberVo> list = sqlSession.selectList("member.select", "1");//h가 member의 parameter에 들어감. resultset rs.next안해줘도됨
+List<MemberVo> list = sqlSession.selectList("member.select", "");
+	//앞부분 member의 select라는 뜻, h가 member의 parameter에 들어감. resultset rs.next안해줘도됨, h는 검색어이다.
 
 for(MemberVo vo : list){
    out.print("<li>" + vo.getName());
    out.print("<li>" + vo.getPhone());
    out.print("<li>-------------------------------");
 }
-
 
 
 %>

@@ -43,7 +43,6 @@ $('#btnSend').on('click', function(){
 				+   '  <li>msg :' + receiveData.msg+ '</li>'
 				+   '</ul>';
 			
-			
 			$('#result').html(str);
 		}
 	})
