@@ -6,8 +6,5 @@
    <select id="select" parameterType="String" resultType="member.MemberVo">
       select * from member where name like '%${_parameter}%' or phone like '%${_parameter}%' 
    </select>
-
-
-
-
+   
 </mapper>
