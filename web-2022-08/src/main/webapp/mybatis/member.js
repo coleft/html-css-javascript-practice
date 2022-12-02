@@ -4,7 +4,7 @@
  
  $('.btnInsert').on('click', function(){	//form을 매개변수로
 	var param = $('.frm').serialize();
-	$.post('member_insert.jsp', param, function(data){
+	$.post('bean.jsp?job=insert', param, function(data){
 		$('section').html(data);
 	})
 })
@@ -29,7 +29,7 @@
 
 $('.btnUpdate').on('click', function(){	//form을 매개변수로
 	var param = $('.frm').serialize();
-	$.post('member_update.jsp', param, function(data){
+	$.post('bean.jsp?job=update', param, function(data){
 		$('section').html(data);
 	})
 })
@@ -40,8 +40,8 @@ $('.btnUpdateR').on('click', function(){	//form을 매개변수로
 	var data = new FormData(frm);
 	
 	$.ajax({
-		type : 'POST', 
-		url :  'mmfs.do',
+		type : 'POST',
+		url :  'mmfs.do?job=update',
 		data : data,
 		contentType : false,
 		processData : false,
@@ -57,7 +57,7 @@ $('.btnDeleteR').on('click', function(){	//form을 매개변수로
 	if( !yn ) return;
 	
 	var param = $('.frm').serialize();
-	$.post('member_select.jsp', param, function(data){
+	$.post('bean.jsp?job=delete', param, function(data){
 		$('section').html(data);
 	})
 })
@@ -67,7 +67,7 @@ $('.btnDeleteR').on('click', function(){	//form을 매개변수로
 	var frm = $('.frm')[0];	
 	frm.enctype = '';
 	var param = $(frm).serialize();
-	$.post('member_select.jsp', param, function(data){
+	$.post('bean.jsp?job=select', param, function(data){
 		$('section').html(data);
 	})
 })
@@ -77,16 +77,16 @@ $('.btnDeleteR').on('click', function(){	//form을 매개변수로
 	frm.nowPage.value=1;
 	
 	var param = $(frm).serialize();
-	$.post('member_select.jsp', param, function(data){
+	$.post('bean.jsp?job=select', param, function(data){
 		$('section').html(data);
 	})
 })
 
-view = function(id){
+view = function(id){	
 	var frm = $('.frm')[0];
 	frm.id.value = id;
 	var param = $(frm).serialize();
-	$.post('member_view.jsp', param, function(data){
+	$.post('bean.jsp?job=view', param, function(data){
 		$('section').html(data);
 	})
 }
@@ -95,7 +95,7 @@ move = function(nowPage){
 	var frm = $('.frm')[0];
 	frm.nowPage.value = nowPage;
 	var param = $(frm).serialize();
-	$.post('member_select.jsp', param, function(data){
+	$.post('bean.jsp?job=select', param, function(data){
 		$('section').html(data);
 	})
 }

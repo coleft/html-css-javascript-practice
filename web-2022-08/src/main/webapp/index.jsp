@@ -17,7 +17,7 @@ if(request.getParameter("inc")!=null){
 
 String sessionId = (String)session.getAttribute("sessionId");
 %>
-
+		
 		<main class = 'realmain'>
 			<div class = 'login'>
 			<%if(sessionId == null){ %>

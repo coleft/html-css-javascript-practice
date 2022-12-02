@@ -1,0 +1,33 @@
+@charset "UTF-8";
+#main>*{
+	box-sizing : border-box;	
+}
+
+#main{
+	width : 1000px;
+	min-height : 400px;
+	border : 2px solid #ccc;
+	padding : 30px;
+	margin : 30px auto;	
+}
+
+#main>header{
+	position : relative;
+	height : 120px;
+	background-color : #ddd;		
+}
+
+header>nav{
+	position : absolute;
+	bottom : 4px;
+	right : 6px;
+}
+
+header>.title{
+	color : #28a059;
+	font-size : 1.5em;
+	font-weight : bolder;
+	padding : 20px;
+}
+
+

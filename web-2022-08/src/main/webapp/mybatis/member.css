@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+#member>form{
+	text-align : right;
+}
+
+#member .item_title{
+	background-color : #333;
+	color : #fff;
+	margin-top : 3px;
+	padding : 3px 0;
+	display : table-row;
+	width :	100%;
+}
+
+#member .item_title>span{
+	display : table-cell;
+}
+
+#member .no{ width : 150px; }
+#member .id{ width : 150px; }
+#member .name{ width : 200px; }
+#member .gender{ width : 90px; }
+#member .phone{ width : 200px; }
+#member .mdate{ width : 200px; }
+
+#member .item{
+	display : table-row;
+}
+
+#member .item:hover{
+	cursor : pointer;	
+}
+
+#member .item>span{
+	display : table-cell;
+}
+
+#member .btn_zone{
+	border-top:2px solid #333;
+	margin-top:5px;
+	padding-top:4px;
+	text-align:center;
+}
+
+#member .btn_zone>input{
+	border-radius: 20px;
+	padding:3px 9px;
+	cursor : pointer;	
+}
+
+#member .btn_zone>input:hover{
+	background-color : #777;	
+}
